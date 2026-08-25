@@ -25,12 +25,18 @@
 
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="../index.html#about" class="nav-link">ABOUT</a></li>
-          <li><a href="../index.html#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="../index.html#projects" class="nav-link active">PROJECTS</a></li>
-          <li><a href="../index.html#experience" class="nav-link">EXPERIENCE</a></li>
-          <li><a href="../index.html#achievements" class="nav-link">ACHIEVEMENTS</a></li>
-          <li><a href="../index.html#contact" class="nav-link">CONTACT</a></li>
+          <li><a href="../index.html#about" class="nav-link"><span data-i18n="nav.about">Tentang Saya</span></a></li>
+          <li><a href="../index.html#skills" class="nav-link"><span data-i18n="nav.skills">Keahlian</span></a></li>
+          <li><a href="../index.html#projects" class="nav-link active"><span data-i18n="nav.projects">Proyek</span></a></li>
+          <li><a href="../index.html#experience" class="nav-link"><span data-i18n="nav.experience">Pengalaman</span></a></li>
+          <li><a href="../index.html#achievements" class="nav-link"><span data-i18n="nav.certificates">Sertifikat</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link"><span data-i18n="nav.contact">Kontak</span></a></li>
+          <li>
+            <div class="lang-switcher" aria-label="Language Selector">
+              <button type="button" class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+              <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
@@ -47,36 +53,49 @@
         <div class="cs-back-bar">
           <a href="../index.html#projects" class="cs-back-link">
             <i class="fas fa-arrow-left"></i>
-            <span>BACK TO PROJECTS</span>
+            <span data-i18n="cs.back_index">BACK TO PROJECTS</span>
           </a>
         </div>
 
         <div class="cs-title-wrap reveal">
-          <div class="cs-category">PROJECT CASE STUDY // 03</div>
+          <div class="cs-category">PROYEK // 03 · AUTOMATION SAAS</div>
           <h1 class="cs-title">SertifKilat.id — Digital Certificate Engine</h1>
           <p class="cs-summary">
             Platform generator sertifikat massal instan dengan sistem verifikasi QR Code dan impor data peserta otomatis via Spreadsheet.
           </p>
+
+          <div class="cs-hero-actions">
+            <a href="https://sertifikat-kilat.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fas fa-bolt"></i>
+              <span data-i18n="cs.visit_live">Kunjungi Platform Live ↗</span>
+            </a>
+           
+          </div>
         </div>
 
         <!-- Meta Grid -->
         <div class="cs-meta-grid reveal">
           <div class="cs-meta-cell">
-            <label>MY ROLE</label>
-            <span>Web & System Developer</span>
+            <label data-i18n="cs.meta_role">PERAN SAYA</label>
+            <span>Co-Founder &amp; System Architect</span>
           </div>
           <div class="cs-meta-cell">
-            <label>CATEGORY</label>
-            <span>Automation SaaS & Document Engine</span>
+            <label data-i18n="cs.meta_category">KATEGORI</label>
+            <span>Automation SaaS &amp; Document Engine</span>
           </div>
           <div class="cs-meta-cell">
-            <label>TECH STACK</label>
-            <span>QR Engine, PDF, Excel Import</span>
+            <label data-i18n="cs.meta_tech_stack">TEKNOLOGI</label>
+            <span>QR Verification Engine, PDF Generator, Spreadsheet Import</span>
           </div>
           <div class="cs-meta-cell">
-            <label>PROCESSING SPEED</label>
-            <span>Instant Batch Automation</span>
+            <label data-i18n="cs.meta_speed">KECEPATAN PRODUKSI</label>
+            <span>Otomasi Batch Sekali Klik</span>
           </div>
+        </div>
+
+        <!-- Large Hero Project Image (Controlled aspect ratio) -->
+        <div class="cs-hero-img-wrap reveal" data-lightbox="true" data-src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" data-title="Sertifikat Kilat — Automated Certificate Platform" data-category="PROYEK // 03 · STARTUP PLATFORM" data-description="Platform generator sertifikat massal instan dengan sistem verifikasi QR Code dan impor data peserta otomatis via Spreadsheet.">
+          <img src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" alt="SertifKilat Dashboard Preview" loading="eager">
         </div>
       </div>
     </section>
@@ -107,7 +126,7 @@
 
         <div class="cs-content-box reveal">
           <p>
-            Sebagai <strong>Web & System Developer</strong>, kontribusi saya meliputi:
+            Sebagai <strong>Co-Founder</strong>, kontribusi saya meliputi:
           </p>
           <ul class="spec-list" style="margin-top: 16px;">
             <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Workflow Mapping:</strong> Merancang alur pemrosesan dari unggah spreadsheet hingga pengunduhan PDF.</li>
@@ -229,48 +248,51 @@
     </section>
 
     <!-- SECTION 07: REAL EVIDENCE GALLERY -->
-    <section class="section-padding" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-muted);">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-tag">07 / REAL PROJECT EVIDENCE</div>
-          <h2 class="section-title">Verified Project Assets</h2>
+          <div class="section-tag" data-i18n="cs.tag_evidence">07 / REAL PROJECT EVIDENCE</div>
+          <h2 class="section-title">Verified Visual Documentation</h2>
+          <p class="section-subtitle" style="color: var(--text-muted); margin-top: 8px;">
+            Bukti screenshot antarmuka sistem dan dokumentasi tim saat pengembangan.
+          </p>
         </div>
 
-        <div class="evidence-grid">
+        <div class="evidence-grid reveal">
           
-          <div class="evidence-card reveal" 
+          <div class="evidence-card" 
                data-lightbox="true" 
                data-id="evidence-sk-dashboard" 
                data-project="SERTIFIKAT KILAT" 
                data-category="SYSTEM INTERFACE" 
                data-title="Dashboard SertifKilat.id" 
                data-description="Screenshot antarmuka utama generator & pencarian sertifikat." 
-               data-src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.png">
+               data-src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">SYSTEM</span>
-              <img src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.png" alt="Screenshot UI SertifKilat" loading="lazy">
+              <img src="../assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" alt="Screenshot UI SertifKilat" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Dashboard SertifKilat.id</h3>
-              <div class="evidence-caption">Antarmuka utama generator & pencarian sertifikat</div>
+              <p class="evidence-caption">Antarmuka utama generator & pencarian sertifikat</p>
             </div>
           </div>
 
-          <div class="evidence-card reveal" 
+          <div class="evidence-card" 
                data-lightbox="true" 
                data-id="evidence-sk-showcase" 
                data-project="SERTIFIKAT KILAT" 
                data-category="PRESENTATION" 
                data-title="Tim Showcase & Presentasi" 
                data-description="Dokumentasi tim saat pameran karya platform digital SertifKilat.id." 
-               data-src="../assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.jpeg">
+               data-src="../assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">PRESENTATION</span>
-              <img src="../assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.jpeg" alt="Foto Tim Showcase SertifKilat" loading="lazy">
+              <img src="../assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.WebP" alt="Foto Tim Showcase SertifKilat" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Tim Showcase & Presentasi</h3>
-              <div class="evidence-caption">Dokumentasi tim saat pameran karya platform digital</div>
+              <p class="evidence-caption">Dokumentasi tim saat pameran karya platform digital</p>
             </div>
           </div>
 
@@ -284,16 +306,17 @@
         
         <!-- Pagination Navigation -->
         <div class="cs-pagination">
-          <a href="takka-steel.html" class="cs-page-link">
+          <a href="takka-steel.html" class="cs-page-link cs-prev">
             <i class="fas fa-arrow-left"></i>
             <span>02. Takka Steel</span>
           </a>
 
-          <div class="cs-page-counter">
-            03 / 03
-          </div>
+          <a href="../index.html#projects" class="cs-page-link cs-center">
+            <i class="fas fa-th"></i>
+            <span data-i18n="cs.back_index">Kembali ke Proyek</span>
+          </a>
 
-          <a href="sahabat-quran.html" class="cs-page-link">
+          <a href="sahabat-quran.html" class="cs-page-link cs-next">
             <span>01. Sahabat Quran</span>
             <i class="fas fa-arrow-right"></i>
           </a>
@@ -317,13 +340,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© 2026 Rahma Fitria Tunnisa. SertifKilat Case Study.</div>
-      <div><span class="mono">ENTJ-T · IPK 3.79 · STMIK TAZKIA</span></div>
+      <div><span class="mono">IPK 3.57 · STMIK TAZKIA</span></div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="../js/navigation.js"></script>
   <script src="../js/gallery.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/case-study-theme.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
+

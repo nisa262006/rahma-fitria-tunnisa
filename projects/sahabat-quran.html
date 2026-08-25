@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study: Sistem Manajemen Yayasan Sahabat Quran — Rahma Fitria Tunnisa</title>
-  <meta name="description" content="Studi kasus backend & sistem informasi administrasi Yayasan Sahabat Quran Bogor yang mengelola ~500 santri aktif.">
-  
+  <meta name="description"
+    content="Studi kasus backend & sistem informasi administrasi Yayasan Sahabat Quran Bogor yang mengelola ~500 santri aktif.">
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
+
 <body>
 
   <!-- SITE HEADER / NAVIGATION -->
@@ -25,12 +28,21 @@
 
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="../index.html#about" class="nav-link">ABOUT</a></li>
-          <li><a href="../index.html#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="../index.html#projects" class="nav-link active">PROJECTS</a></li>
-          <li><a href="../index.html#experience" class="nav-link">EXPERIENCE</a></li>
-          <li><a href="../index.html#achievements" class="nav-link">ACHIEVEMENTS</a></li>
-          <li><a href="../index.html#contact" class="nav-link">CONTACT</a></li>
+          <li><a href="../index.html#about" class="nav-link"><span data-i18n="nav.about">Tentang Saya</span></a></li>
+          <li><a href="../index.html#skills" class="nav-link"><span data-i18n="nav.skills">Keahlian</span></a></li>
+          <li><a href="../index.html#projects" class="nav-link active"><span data-i18n="nav.projects">Proyek</span></a>
+          </li>
+          <li><a href="../index.html#experience" class="nav-link"><span data-i18n="nav.experience">Pengalaman</span></a>
+          </li>
+          <li><a href="../index.html#achievements" class="nav-link"><span
+                data-i18n="nav.certificates">Sertifikat</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link"><span data-i18n="nav.contact">Kontak</span></a></li>
+          <li>
+            <div class="lang-switcher" aria-label="Language Selector">
+              <button type="button" class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+              <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
@@ -47,36 +59,52 @@
         <div class="cs-back-bar">
           <a href="../index.html#projects" class="cs-back-link">
             <i class="fas fa-arrow-left"></i>
-            <span>BACK TO PROJECTS</span>
+            <span data-i18n="cs.back_index">BACK TO PROJECTS</span>
           </a>
         </div>
 
         <div class="cs-title-wrap reveal">
-          <div class="cs-category">PROJECT CASE STUDY // 01</div>
+          <div class="cs-category">PROYEK // 01 · KLIEN NYATA</div>
           <h1 class="cs-title">Sistem Manajemen Yayasan Sahabat Quran</h1>
           <p class="cs-summary">
-            Digitalisasi operasional administrasi, registrasi santri baru, dan modul rekapitulasi laporan keuangan berbasis web di Yayasan Sahabat Quran Bogor.
+            Digitalisasi operasional administrasi, registrasi santri baru, dan modul rekapitulasi laporan keuangan
+            berbasis web di Yayasan Sahabat Quran Bogor.
           </p>
+
+          <div class="cs-hero-actions">
+            <a href="https://akademik.sahabatquran.com" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary">
+              <i class="fas fa-globe"></i>
+              <span data-i18n="cs.visit_live">Kunjungi Website Live ↗</span>
+            </a>
+          
+          </div>
         </div>
 
         <!-- Meta Grid -->
         <div class="cs-meta-grid reveal">
           <div class="cs-meta-cell">
-            <label>MY ROLE</label>
-            <span>Backend Developer (Tim 3)</span>
+            <label data-i18n="cs.meta_role">PERAN SAYA</label>
+            <span>Backend Developer (Tim 3 Orang)</span>
           </div>
           <div class="cs-meta-cell">
-            <label>CATEGORY</label>
-            <span>Academic & Finance System</span>
+            <label data-i18n="cs.meta_category">KATEGORI</label>
+            <span>Academic &amp; Finance System</span>
           </div>
           <div class="cs-meta-cell">
-            <label>TECH STACK</label>
-            <span>SQL, PHP/JS, Database</span>
+            <label data-i18n="cs.meta_tech_stack">TEKNOLOGI</label>
+            <span>SQL, PHP, JavaScript, MySQL</span>
           </div>
           <div class="cs-meta-cell">
-            <label>SYSTEM SCALE</label>
-            <span>~500 Active Santri</span>
+            <label data-i18n="cs.meta_scale">SKALA SISTEM</label>
+            <span>~500 Santri Aktif</span>
           </div>
+        </div>
+
+        <!-- Large Hero Project Image (Controlled aspect ratio) -->
+        <div class="cs-hero-img-wrap reveal" data-lightbox="true" data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP" data-title="Sistem Manajemen Yayasan Sahabat Quran" data-category="PROYEK // 01 · KLIEN NYATA" data-description="Digitalisasi operasional administrasi, registrasi santri baru, dan modul rekapitulasi laporan keuangan berbasis web di Yayasan Sahabat Quran Bogor.">
+          <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP"
+            alt="Sahabat Quran System Preview" loading="eager">
         </div>
       </div>
     </section>
@@ -91,17 +119,22 @@
 
         <div class="cs-content-box reveal">
           <p>
-            Sebelum sistem ini dibangun, seluruh kegiatan operasional administrasi Yayasan Sahabat Quran Bogor — termasuk pencatatan biodata santri, pendaftaran calon santri baru, dan penyusunan laporan keuangan — dilakukan secara manual.
+            Sebelum sistem ini dibangun, seluruh kegiatan operasional administrasi Yayasan Sahabat Quran Bogor —
+            termasuk pencatatan biodata santri, pendaftaran calon santri baru, dan penyusunan laporan keuangan —
+            dilakukan secara manual.
           </p>
           <p>
-            Proses pencatatan manual ini memerlukan waktu pemrosesan dan verifikasi data yang lama (mencapai hingga 1 minggu) serta memiliki risiko tinggi terjadinya pembungkusan data ganda atau ketidaksesuaian laporan keuangan.
+            Proses pencatatan manual ini memerlukan waktu pemrosesan dan verifikasi data yang lama (mencapai hingga 1
+            minggu) serta memiliki risiko tinggi terjadinya pembungkusan data ganda atau ketidaksesuaian laporan
+            keuangan.
           </p>
         </div>
       </div>
     </section>
 
     <!-- SECTION 03: MY ROLE -->
-    <section class="section-padding" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
+    <section class="section-padding"
+      style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-tag">03 / MY ROLE & RESPONSIBILITIES</div>
@@ -110,16 +143,21 @@
 
         <div class="cs-content-box reveal">
           <p>
-            Saya berperan sebagai <strong>Backend Developer</strong> dalam tim pengembang inti 3 orang (1 Project Manager, 1 UI/UX & Frontend Developer, 1 Backend Developer).
+            Saya berperan sebagai <strong>Backend Developer</strong> dalam tim pengembang inti 3 orang (1 Project
+            Manager, 1 UI/UX & Frontend Developer, 1 Backend Developer).
           </p>
           <p>
             Tanggung jawab utama saya meliputi:
           </p>
           <ul class="spec-list" style="margin-top: 16px;">
-            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Relasi Database:</strong> Merancang skema tabel SQL untuk registrasi, data santri, dan transaksi keuangan.</li>
-            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Backend Logic:</strong> Membangun logika autentikasi login pengguna dan alur validasi formulir santri.</li>
-            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Integrasi Data:</strong> Menghubungkan antarmuka frontend dengan query basis data agar pemrosesan berjalan real-time.</li>
-            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Requirement Gathering:</strong> Ikut serta mendengarkan kebutuhan pengurus yayasan saat pengumpulan spesifikasi.</li>
+            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Relasi Database:</strong> Merancang skema
+              tabel SQL untuk registrasi, data santri, dan transaksi keuangan.</li>
+            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Backend Logic:</strong> Membangun logika
+              autentikasi login pengguna dan alur validasi formulir santri.</li>
+            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Integrasi Data:</strong> Menghubungkan
+              antarmuka frontend dengan query basis data agar pemrosesan berjalan real-time.</li>
+            <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Requirement Gathering:</strong> Ikut serta
+              mendengarkan kebutuhan pengurus yayasan saat pengumpulan spesifikasi.</li>
           </ul>
         </div>
       </div>
@@ -179,7 +217,8 @@
     </section>
 
     <!-- SECTION 05: SOLUTION -->
-    <section class="section-padding" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
+    <section class="section-padding"
+      style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-tag">05 / SOLUTION & SYSTEM COMPONENTS</div>
@@ -191,7 +230,8 @@
             <i class="fas fa-user-shield"></i>
             <div>
               <h4>Autentikasi & Hak Akses Pengguna</h4>
-              <p>Sistem login terproteksi untuk membatasi hak akses pengurus yayasan, administrator, dan staf pendaftaran.</p>
+              <p>Sistem login terproteksi untuk membatasi hak akses pengurus yayasan, administrator, dan staf
+                pendaftaran.</p>
             </div>
           </div>
 
@@ -199,7 +239,8 @@
             <i class="fas fa-user-plus"></i>
             <div>
               <h4>Modul Registrasi Santri Baru</h4>
-              <p>Formulir pendaftaran digital berbasis web yang langsung tersimpan rapi ke dalam basis data akademik.</p>
+              <p>Formulir pendaftaran digital berbasis web yang langsung tersimpan rapi ke dalam basis data akademik.
+              </p>
             </div>
           </div>
 
@@ -207,7 +248,8 @@
             <i class="fas fa-users-cog"></i>
             <div>
               <h4>Manajemen Data Santri & Akademik</h4>
-              <p>Pengelolaan data ~500 santri secara terpusat untuk mempermudah pencarian, update status, dan riwayat santri.</p>
+              <p>Pengelolaan data ~500 santri secara terpusat untuk mempermudah pencarian, update status, dan riwayat
+                santri.</p>
             </div>
           </div>
 
@@ -248,67 +290,60 @@
     </section>
 
     <!-- SECTION 07: REAL EVIDENCE GALLERY -->
-    <section class="section-padding" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-muted);">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-tag">07 / REAL PROJECT EVIDENCE</div>
+          <div class="section-tag" data-i18n="cs.tag_evidence">07 / REAL PROJECT EVIDENCE</div>
           <h2 class="section-title">Verified Visual Documentation</h2>
-          <p class="section-subtitle">Bukti screenshot antarmuka sistem dan dokumentasi tim saat pengembangan.</p>
+          <p class="section-subtitle" style="color: var(--text-muted); margin-top: 8px;">
+            Bukti screenshot antarmuka sistem dan dokumentasi tim saat pengembangan.
+          </p>
         </div>
 
-        <div class="evidence-grid">
-          
-          <div class="evidence-card reveal" 
-               data-lightbox="true" 
-               data-id="evidence-sq-system" 
-               data-project="SAHABAT QURAN" 
-               data-category="SYSTEM EVIDENCE" 
-               data-title="Portal Login & Registrasi Akademik" 
-               data-description="Screenshot antarmuka sistem live akademik.sahabatquran.com" 
-               data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.jpeg">
+        <div class="evidence-grid reveal">
+
+          <div class="evidence-card" data-lightbox="true" data-id="evidence-sq-system" data-project="SAHABAT QURAN"
+            data-category="SYSTEM EVIDENCE" data-title="Portal Login & Registrasi Akademik"
+            data-description="Screenshot antarmuka sistem live akademik.sahabatquran.com"
+            data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">SYSTEM</span>
-              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.jpeg" alt="Tampilan Layar Login Sahabat Quran" loading="lazy">
+              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP"
+                alt="Tampilan Layar Login Sahabat Quran" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Portal Login & Registrasi Akademik</h3>
-              <div class="evidence-caption">Screenshot antarmuka sistem live akademik.sahabatquran.com</div>
+              <p class="evidence-caption">Screenshot antarmuka sistem live akademik.sahabatquran.com</p>
             </div>
           </div>
 
-          <div class="evidence-card reveal" 
-               data-lightbox="true" 
-               data-id="evidence-sq-team" 
-               data-project="SAHABAT QURAN" 
-               data-category="TEAMWORK" 
-               data-title="Tim Pengembang Sistem" 
-               data-description="Foto tim 4 orang di panggung auditorium STMIK Tazkia." 
-               data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.jpeg">
+          <div class="evidence-card" data-lightbox="true" data-id="evidence-sq-team" data-project="SAHABAT QURAN"
+            data-category="TEAMWORK" data-title="Tim Pengembang Sistem"
+            data-description="Foto tim 4 orang di panggung auditorium STMIK Tazkia."
+            data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">TEAMWORK</span>
-              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.jpeg" alt="Tim Pengembang Sahabat Quran" loading="lazy">
+              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP"
+                alt="Tim Pengembang Sahabat Quran" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Tim Pengembang Sistem</h3>
-              <div class="evidence-caption">Foto tim 4 orang di panggung auditorium STMIK Tazkia</div>
+              <p class="evidence-caption">Foto tim 4 orang di panggung auditorium STMIK Tazkia</p>
             </div>
           </div>
 
-          <div class="evidence-card reveal" 
-               data-lightbox="true" 
-               data-id="evidence-sq-presentation" 
-               data-project="SAHABAT QURAN" 
-               data-category="PRESENTATION" 
-               data-title="Sesi Demonstrasi Proyek Auditorium" 
-               data-description="Pemaparan hasil sistem di hadapan dosen & audiens." 
-               data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.jpeg">
+          <div class="evidence-card" data-lightbox="true" data-id="evidence-sq-presentation"
+            data-project="SAHABAT QURAN" data-category="PRESENTATION" data-title="Sesi Demonstrasi Proyek Auditorium"
+            data-description="Pemaparan hasil sistem di hadapan dosen & audiens."
+            data-src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">PRESENTATION</span>
-              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" alt="Sesi Presentasi Auditorium" loading="lazy">
+              <img src="../assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.WebP"
+                alt="Sesi Presentasi Auditorium" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Sesi Demonstrasi Proyek Auditorium</h3>
-              <div class="evidence-caption">Pemaparan hasil sistem di hadapan dosen & audiens</div>
+              <p class="evidence-caption">Pemaparan hasil sistem di hadapan dosen & audiens</p>
             </div>
           </div>
 
@@ -316,34 +351,22 @@
       </div>
     </section>
 
-    <!-- SECTION 08: VERIFIED LINKS -->
+    <!-- SECTION 08: LINKS & PAGINATION -->
     <section class="section-padding">
       <div class="container">
-        <div class="contact-card reveal" style="max-width: 700px;">
-          <div class="section-tag" style="justify-content: center;">08 / VERIFIED LINK</div>
-          <h2 style="font-size: 1.8rem; margin-bottom: 16px;">System Live Deployment</h2>
-          <p class="contact-desc">
-            Sistem telah berjalan resmi di domain akademik Yayasan Sahabat Quran.
-          </p>
-
-          <a href="https://akademik.sahabatquran.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <span>OPEN LIVE WEBSITE</span>
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
         <!-- Pagination Navigation -->
         <div class="cs-pagination">
-          <a href="sertifikat-kilat.html" class="cs-page-link">
+          <a href="sertifikat-kilat.html" class="cs-page-link cs-prev">
             <i class="fas fa-arrow-left"></i>
             <span>03. SertifKilat.id</span>
           </a>
 
-          <div class="cs-page-counter">
-            01 / 03
-          </div>
+          <a href="../index.html#projects" class="cs-page-link cs-center">
+            <i class="fas fa-th"></i>
+            <span data-i18n="cs.back_index">Kembali ke Proyek</span>
+          </a>
 
-          <a href="takka-steel.html" class="cs-page-link">
+          <a href="takka-steel.html" class="cs-page-link cs-next">
             <span>02. Takka Steel</span>
             <i class="fas fa-arrow-right"></i>
           </a>
@@ -367,13 +390,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© 2026 Rahma Fitria Tunnisa. Sahabat Quran Case Study.</div>
-      <div><span class="mono">ENTJ-T · IPK 3.79 · STMIK TAZKIA</span></div>
+      <div><span class="mono">IPK 3.57 · STMIK TAZKIA</span></div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="../js/navigation.js"></script>
   <script src="../js/gallery.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/case-study-theme.js"></script>
   <script src="../js/main.js"></script>
 </body>
+
 </html>

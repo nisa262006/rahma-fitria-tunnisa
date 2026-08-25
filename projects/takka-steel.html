@@ -25,12 +25,18 @@
 
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="../index.html#about" class="nav-link">ABOUT</a></li>
-          <li><a href="../index.html#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="../index.html#projects" class="nav-link active">PROJECTS</a></li>
-          <li><a href="../index.html#experience" class="nav-link">EXPERIENCE</a></li>
-          <li><a href="../index.html#achievements" class="nav-link">ACHIEVEMENTS</a></li>
-          <li><a href="../index.html#contact" class="nav-link">CONTACT</a></li>
+          <li><a href="../index.html#about" class="nav-link"><span data-i18n="nav.about">Tentang Saya</span></a></li>
+          <li><a href="../index.html#skills" class="nav-link"><span data-i18n="nav.skills">Keahlian</span></a></li>
+          <li><a href="../index.html#projects" class="nav-link active"><span data-i18n="nav.projects">Proyek</span></a></li>
+          <li><a href="../index.html#experience" class="nav-link"><span data-i18n="nav.experience">Pengalaman</span></a></li>
+          <li><a href="../index.html#achievements" class="nav-link"><span data-i18n="nav.certificates">Sertifikat</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link"><span data-i18n="nav.contact">Kontak</span></a></li>
+          <li>
+            <div class="lang-switcher" aria-label="Language Selector">
+              <button type="button" class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+              <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
@@ -47,42 +53,49 @@
         <div class="cs-back-bar">
           <a href="../index.html#projects" class="cs-back-link">
             <i class="fas fa-arrow-left"></i>
-            <span>BACK TO PROJECTS</span>
+            <span data-i18n="cs.back_index">BACK TO PROJECTS</span>
           </a>
         </div>
 
         <div class="cs-title-wrap reveal">
-          <div class="cs-category">PROJECT CASE STUDY // 02 · WEBSITE LIVE DEPLOYMENT</div>
-          <h1 class="cs-title">Company Profile & Katalog Takka Steel</h1>
+          <div class="cs-category">PROYEK // 02 · WEBSITE LIVE DEPLOYMENT</div>
+          <h1 class="cs-title">Company Profile &amp; Katalog Takka Steel</h1>
           <p class="cs-summary">
-            Pembuatan website company profile dan katalog produk digital untuk distributor material baja & bahan bangunan terpercaya Jabodetabek.
+            Pembuatan website company profile dan katalog produk digital untuk distributor material baja &amp; bahan bangunan terpercaya Jabodetabek.
           </p>
-          <div style="margin-top: 20px;">
+
+          <div class="cs-hero-actions">
             <a href="https://www.takkasteel.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fas fa-globe"></i>
-              <span>VISIT LIVE WEBSITE ↗</span>
+              <span data-i18n="cs.visit_live">Kunjungi Website Live ↗</span>
             </a>
+          
           </div>
         </div>
 
         <!-- Meta Grid -->
         <div class="cs-meta-grid reveal">
           <div class="cs-meta-cell">
-            <label>MY ROLE</label>
-            <span>Web Developer / Implementation</span>
+            <label data-i18n="cs.meta_role">PERAN SAYA</label>
+            <span>Project Manager / Project Lead</span>
           </div>
           <div class="cs-meta-cell">
-            <label>CATEGORY</label>
+            <label data-i18n="cs.meta_category">KATEGORI</label>
             <span>Website Live Deployment</span>
           </div>
           <div class="cs-meta-cell">
-            <label>TECH STACK</label>
+            <label data-i18n="cs.meta_tech_stack">TEKNOLOGI</label>
             <span>HTML, CSS, JavaScript, UI Design</span>
           </div>
           <div class="cs-meta-cell">
-            <label>LIVE DOMAIN</label>
+            <label data-i18n="cs.meta_domain">DOMAIN LIVE</label>
             <span>www.takkasteel.com</span>
           </div>
+        </div>
+
+        <!-- Large Hero Project Image (Controlled aspect ratio) -->
+        <div class="cs-hero-img-wrap reveal" data-lightbox="true" data-src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" data-title="Company Profile &amp; Katalog — Takka Steel" data-category="PROYEK // 02 · WEBSITE LIVE" data-description="Pembuatan website company profile dan katalog produk digital untuk distributor material baja &amp; bahan bangunan terpercaya Jabodetabek.">
+          <img src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" alt="Takka Steel Website Preview" loading="eager">
         </div>
       </div>
     </section>
@@ -116,7 +129,7 @@
 
         <div class="cs-content-box reveal">
           <p>
-            Sebagai <strong>Web Developer</strong>, saya bertanggung jawab dalam memformulasi kebutuhan antarmuka dan struktur landing page:
+            Sebagai <strong>Project Manager / Project Lead</strong>, saya bertanggung jawab dalam memformulasi kebutuhan antarmuka dan struktur landing page:
           </p>
           <ul class="spec-list" style="margin-top: 16px;">
             <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Requirement Analysis:</strong> Mengidentifikasi struktur navigasi utama (Beranda, Tentang Kami, Produk, Artikel, Kontak).</li>
@@ -236,66 +249,69 @@
     </section>
 
     <!-- SECTION 07: REAL EVIDENCE GALLERY -->
-    <section class="section-padding" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-muted);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-muted);">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-tag">07 / REAL PROJECT EVIDENCE</div>
-          <h2 class="section-title">Verified Visual Evidence</h2>
+          <div class="section-tag" data-i18n="cs.tag_evidence">07 / REAL PROJECT EVIDENCE</div>
+          <h2 class="section-title">Verified Visual Documentation</h2>
+          <p class="section-subtitle" style="color: var(--text-muted); margin-top: 8px;">
+            Screenshots and visual documentation from the actual project development process.
+          </p>
         </div>
 
-        <div class="evidence-grid">
+        <div class="evidence-grid reveal">
           
-          <div class="evidence-card reveal" 
+          <div class="evidence-card" 
                data-lightbox="true" 
                data-id="evidence-takka-ui" 
                data-project="TAKKA STEEL" 
                data-category="UI DESIGN" 
                data-title="Homepage UI Landing Page" 
                data-description="Screenshot antarmuka resmi Takka Steel (Harga Minimum, Kualitas Premium)." 
-               data-src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.png">
+               data-src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">UI DESIGN</span>
-              <img src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.png" alt="Screenshot UI Takka Steel" loading="lazy">
+              <img src="../assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" alt="Screenshot UI Takka Steel" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Homepage UI Landing Page</h3>
-              <div class="evidence-caption">Cuplikan antarmuka resmi Takka Steel</div>
+              <p class="evidence-caption">Cuplikan antarmuka resmi Takka Steel</p>
             </div>
           </div>
 
-          <div class="evidence-card reveal" 
+          <div class="evidence-card" 
                data-lightbox="true" 
                data-id="evidence-takka-store" 
                data-project="TAKKA STEEL" 
                data-category="TEAMWORK" 
                data-title="Kunjungan Toko & Gathering Klien" 
                data-description="Dokumentasi tim di lokasi gudang fisik Takka Steel." 
-               data-src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.jpeg">
+               data-src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">TEAMWORK</span>
-              <img src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" alt="Tim Pengembang di Toko Takka Steel" loading="lazy">
+              <img src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.WebP" alt="Tim Pengembang di Toko Takka Steel" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Kunjungan Toko & Gathering Klien</h3>
-              <div class="evidence-caption">Dokumentasi tim di lokasi gudang fisik Takka Steel</div>
+              <p class="evidence-caption">Dokumentasi tim di lokasi gudang fisik Takka Steel</p>
             </div>
           </div>
 
-          <div class="evidence-card reveal" 
+          <div class="evidence-card" 
                data-lightbox="true" 
                data-id="evidence-takka-meeting" 
                data-project="TAKKA STEEL" 
                data-category="DOCUMENTATION" 
                data-title="Sesi Rapat Requirement Gathering" 
                data-description="Diskusi persiapan struktur presentasi & fitur produk Takka Steel." 
-               data-src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.jpeg">
+               data-src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.WebP">
             <div class="evidence-img-wrap">
               <span class="evidence-badge">DOCUMENTATION</span>
-              <img src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.jpeg" alt="Sesi Rapat Tim Takka Steel" loading="lazy">
+              <img src="../assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.WebP" alt="Sesi Rapat Tim Takka Steel" loading="lazy">
             </div>
             <div class="evidence-body">
               <h3 class="evidence-title">Sesi Rapat Requirement Gathering</h3>
-              <div class="evidence-caption">Diskusi persiapan struktur presentasi & fitur produk</div>
+              <p class="evidence-caption">Diskusi persiapan struktur presentasi & fitur produk</p>
             </div>
           </div>
 
@@ -309,16 +325,17 @@
         
         <!-- Pagination Navigation -->
         <div class="cs-pagination">
-          <a href="sahabat-quran.html" class="cs-page-link">
+          <a href="sahabat-quran.html" class="cs-page-link cs-prev">
             <i class="fas fa-arrow-left"></i>
             <span>01. Sahabat Quran</span>
           </a>
 
-          <div class="cs-page-counter">
-            02 / 03
-          </div>
+          <a href="../index.html#projects" class="cs-page-link cs-center">
+            <i class="fas fa-th"></i>
+            <span data-i18n="cs.back_index">Kembali ke Proyek</span>
+          </a>
 
-          <a href="sertifikat-kilat.html" class="cs-page-link">
+          <a href="sertifikat-kilat.html" class="cs-page-link cs-next">
             <span>03. SertifKilat.id</span>
             <i class="fas fa-arrow-right"></i>
           </a>
@@ -342,13 +359,16 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© 2026 Rahma Fitria Tunnisa. Takka Steel Case Study.</div>
-      <div><span class="mono">ENTJ-T · IPK 3.79 · STMIK TAZKIA</span></div>
+      <div><span class="mono">IPK 3.57 · STMIK TAZKIA</span></div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="../js/navigation.js"></script>
   <script src="../js/gallery.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/case-study-theme.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
+

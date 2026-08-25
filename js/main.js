@@ -2,10 +2,24 @@
    main.js — Core Interactions, Reveal Animations & Observers
    ============================================================ */
 
+/* ——— CENTRALIZED CV URL (change only here) ——— */
+const CV_URL = 'assets/cv/Rahma-Fitria-Tunnisa-CV.pdf';
+
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Wire all CV buttons via data attribute
+  document.querySelectorAll('[data-cv-action]').forEach(el => {
+    const action = el.getAttribute('data-cv-action');
+    el.setAttribute('href', CV_URL);
+    if (action === 'download') {
+      el.setAttribute('download', 'Rahma-Fitria-Tunnisa-CV.pdf');
+    } else {
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
   // 1. Scroll Reveal Observer
   const revealElements = document.querySelectorAll('.reveal');
-
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -15,13 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, {
     root: null,
-    threshold: 0.12,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.10,
+    rootMargin: '0px 0px -40px 0px'
   });
-
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 2. Smooth Scrolling for Anchor Links
+  // 2. Smooth Scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -29,17 +42,56 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        const headerOffset = 70;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        const headerOffset = 80;
+        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        // close mobile menu if open
+        const nm = document.querySelector('.nav-menu');
+        if (nm) { nm.classList.remove('active', 'open'); }
+        const btn = document.querySelector('.mobile-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     });
   });
 
-  console.log('Portfolio initialized successfully — Rahma Fitria Tunnisa');
+  // 3. Mobile menu toggle
+  const toggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (toggle && navMenu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('active');
+      navMenu.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  }
+
+  // 4. Header scroll effect
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // 5. Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  if (sections.length && navLinks.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  console.log('Portfolio initialized — Rahma Fitria Tunnisa | CV_URL:', CV_URL);
 });

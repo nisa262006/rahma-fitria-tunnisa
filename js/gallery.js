@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!modalOverlay) return;
 
+  // Selector for all clickable image containers across index.html, portfolio.html & case studies
+  const scopeSelector = '[data-lightbox="true"], [data-lightbox], .cert-card, .evidence-card, .gallery-item, .cert-cosmic-card, .evidence-cosmic-card, .project-media, .p-visual, .cs-hero-img-wrap';
+
   // Ensure Next/Prev buttons exist in modal container
   let prevBtn = document.getElementById('modal-prev');
   let nextBtn = document.getElementById('modal-next');
@@ -39,21 +42,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Extract full item metadata from a given element
+  // Extract metadata from any visual evidence item
   function extractMetadata(el) {
     if (!el) return null;
 
     const img = el.querySelector('img');
     const imgSrc = el.getAttribute('data-src') || (img ? img.getAttribute('src') : '');
+    if (!imgSrc) return null;
+
     const title = el.getAttribute('data-title') || 
-                  el.querySelector('.cert-title, .evidence-title, .gallery-caption')?.textContent?.trim() || 
-                  'Evidence';
+                  el.querySelector('.cert-title, .evidence-title, .gallery-caption, .project-title, .p-title, .cert-cosmic-title, .evidence-cosmic-title, .cs-title')?.textContent?.trim() || 
+                  'Bukti Visual / Documentation';
     const category = el.getAttribute('data-category') || 
-                     el.querySelector('.cert-issuer, .evidence-badge')?.textContent?.trim() || 
+                     el.querySelector('.cert-issuer, .evidence-badge, .project-category, .p-kicker, .cert-cosmic-issuer, .evidence-cosmic-badge, .cs-category')?.textContent?.trim() || 
                      'PORTFOLIO EVIDENCE';
     const description = el.getAttribute('data-description') || 
                         el.getAttribute('data-caption') || 
-                        el.querySelector('.evidence-caption, .cert-date')?.textContent?.trim() || 
+                        el.querySelector('.evidence-caption, .cert-date, .project-desc, .p-desc, .cert-cosmic-date, .cs-summary')?.textContent?.trim() || 
                         '';
     const project = el.getAttribute('data-project') || '';
     const id = el.getAttribute('data-id') || el.id || '';
@@ -87,15 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
       modalCaption.innerHTML = `
         <div class="modal-caption-bar">
           <div class="modal-caption-text">
-            <strong>${item.title}</strong>
-            ${item.description ? `<p style="margin-top: 4px; font-size: 0.88rem; opacity: 0.85; line-height: 1.4;">${item.description}</p>` : ''}
+            <strong style="display: block; font-size: 1rem; color: #ffffff;">${item.title}</strong>
+            ${item.description ? `<p style="margin-top: 6px; font-size: 0.88rem; opacity: 0.85; line-height: 1.4;">${item.description}</p>` : ''}
           </div>
           ${item.category ? `<span class="modal-category-badge">${item.category}</span>` : ''}
         </div>
       `;
     }
 
-    // Toggle navigation buttons
+    // Toggle navigation buttons strictly when multiple images exist in group
     if (prevBtn && nextBtn) {
       const showNav = currentGroup.length > 1;
       prevBtn.style.display = showNav ? 'flex' : 'none';
@@ -107,51 +112,53 @@ document.addEventListener('DOMContentLoaded', () => {
   function openLightboxFromElement(targetEl) {
     if (!targetEl) return;
 
-    // Find parent container or section to establish current gallery group scope
-    const parentContainer = targetEl.closest('.cert-grid, .gallery-grid, .evidence-grid, section, body');
-    const scopeSelector = '[data-lightbox], .cert-card, .evidence-card, .gallery-item';
+    const parentContainer = targetEl.closest('.cert-grid, .gallery-grid, .evidence-grid, .cert-cosmic-grid, .evidence-cosmic-grid, .projects-grid, .project-cards, section, body');
     
     let siblingElements = parentContainer ? Array.from(parentContainer.querySelectorAll(scopeSelector)) : [targetEl];
-
-    // Filter out nested duplicates
     siblingElements = siblingElements.filter(el => el.matches(scopeSelector));
 
     currentGroup = siblingElements.map(el => extractMetadata(el)).filter(item => item && item.src);
     
-    // Find index of clicked element strictly by element reference or data-id
     const clickedMeta = extractMetadata(targetEl);
     let foundIndex = currentGroup.findIndex(item => item.element === targetEl || (item.id && item.id === clickedMeta.id));
 
-    if (foundIndex === -1 && clickedMeta.src) {
+    if (foundIndex === -1 && clickedMeta && clickedMeta.src) {
       foundIndex = currentGroup.findIndex(item => item.src === clickedMeta.src);
     }
 
     if (foundIndex === -1) {
-      currentGroup = [clickedMeta];
+      currentGroup = clickedMeta && clickedMeta.src ? [clickedMeta] : [];
       foundIndex = 0;
     }
 
-    updateModalDisplay(foundIndex);
-    modalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    if (currentGroup.length > 0) {
+      updateModalDisplay(foundIndex);
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
-  // EVENT DELEGATION: Intercept clicks on lightbox cards anywhere on page
+  // EVENT DELEGATION: Intercept clicks on any lightbox-enabled element
   document.body.addEventListener('click', (e) => {
-    const card = e.target.closest('[data-lightbox="true"], .cert-card, .evidence-card, .gallery-item');
+    // Ignore action buttons or direct link clicks inside project cards
+    if (e.target.closest('button.btn, button.p-btn-modal, a.btn, a.p-btn-case, .project-actions, .p-actions-row')) {
+      return;
+    }
+
+    const card = e.target.closest(scopeSelector);
     if (card) {
-      // Prevent anchor jumps if card is inside a link or button
-      if (e.target.tagName !== 'A' && !e.target.closest('a:not(.cert-card):not(.evidence-card):not(.gallery-item)')) {
-        e.preventDefault();
+      const isAnchor = card.tagName === 'A' || e.target.tagName === 'A';
+      if (isAnchor && !card.hasAttribute('data-lightbox')) {
+        return; // Allow standard link navigation if not explicitly lightbox enabled
       }
+      e.preventDefault();
       openLightboxFromElement(card);
     }
   });
 
-  // Global legacy helper function for direct inline calls
+  // Global helper function for direct inline calls
   window.openLightbox = function(src, caption, category, project) {
-    // Search DOM for element matching exact src attribute
-    const matchingEl = Array.from(document.querySelectorAll('[data-lightbox], .cert-card, .evidence-card, .gallery-item'))
+    const matchingEl = Array.from(document.querySelectorAll(scopeSelector))
       .find(el => {
         const meta = extractMetadata(el);
         return meta && meta.src && (meta.src.includes(src) || src.includes(meta.src));
@@ -162,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       currentGroup = [{
         src: src,
-        title: caption || 'Portfolio Evidence',
+        title: caption || 'Visual Evidence',
         category: category || 'EVIDENCE',
         description: caption || '',
         project: project || ''
@@ -192,15 +199,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeModal() {
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
-    if (modalImg) modalImg.src = '';
+    setTimeout(() => {
+      if (!modalOverlay.classList.contains('active') && modalImg) {
+        modalImg.src = '';
+      }
+    }, 250);
   }
 
   if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
   }
 
   modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) closeModal();
+    if (e.target === modalOverlay || e.target.classList.contains('modal-overlay')) {
+      closeModal();
+    }
   });
 
   document.addEventListener('keydown', (e) => {
@@ -210,4 +226,3 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') updateModalDisplay(currentIndex + 1);
   });
 });
-

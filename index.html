@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rahma Fitria Tunnisa — Backend Developer & Business Analyst Portfolio</title>
-  <meta name="description" content="Portofolio profesional Rahma Fitria Tunnisa. Mahasiswa Sistem Informasi STMIK Tazkia yang menerjemahkan kebutuhan bisnis menjadi sistem digital yang efisien dan berjalan.">
-  <meta name="keywords" content="Rahma Fitria Tunnisa, Backend Developer, Business Analyst, Data Analytics, STMIK Tazkia, Sistem Informasi, Portfolio">
+  <title>Rahma Fitria Tunnisa — Information Systems Student | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Rahma Fitria Tunnisa, Information Systems student at STMIK Tazkia with hands-on experience in web development, project lead, database management, SQL, Python, and data analytics.">
+  <meta name="keywords" content="Rahma Fitria Tunnisa, Information Systems, Data Analyst, Business Analyst, STMIK Tazkia, Project Manager, Web Developer, Portfolio, SQL, Python">
   
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Rahma Fitria Tunnisa — Information Systems Student Portfolio">
+  <meta property="og:description" content="Information Systems student at STMIK Tazkia with real-world project experience in web development, system architecture, and data analytics.">
+  <meta property="og:type" content="website">
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Stylesheets -->
+  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
   <!-- SITE HEADER / NAVIGATION -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="brand-logo">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="nav-brand-logo">
         <span class="brand-badge">RFT</span>
-        <span>RAHMA FITRIA.T.</span>
+        <span class="brand-name" data-i18n="nav.brand_sub">RAHMA FITRIA.T.</span>
       </a>
 
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="#about" class="nav-link"><span class="nav-number">01.</span>ABOUT</a></li>
-          <li><a href="#skills" class="nav-link"><span class="nav-number">02.</span>SKILLS</a></li>
-          <li><a href="#projects" class="nav-link"><span class="nav-number">03.</span>PROJECTS</a></li>
-          <li><a href="#experience" class="nav-link"><span class="nav-number">04.</span>EXPERIENCE</a></li>
-          <li><a href="#organization" class="nav-link"><span class="nav-number">05.</span>ORGANISASI</a></li>
-          <li><a href="#achievements" class="nav-link"><span class="nav-number">06.</span>ACHIEVEMENTS</a></li>
-          <li><a href="#system" class="nav-link"><span class="nav-number">07.</span>DOKUMENTASI</a></li>
-          <li><a href="#contact" class="nav-link"><span class="nav-number">08.</span>CONTACT</a></li>
-        </ul>
-      </nav>
+      <!-- Desktop & Mobile Navigation Drawer -->
+      <div class="nav-container" id="nav-container">
+        <nav aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="#about" class="nav-link" id="nav-item-about"><span class="nav-number">01.</span><span data-i18n="nav.about">Tentang</span></a></li>
+            <li><a href="#education" class="nav-link" id="nav-item-edu"><span class="nav-number">02.</span><span data-i18n="nav.education">Pendidikan</span></a></li>
+            <li><a href="#skills" class="nav-link" id="nav-item-skills"><span class="nav-number">03.</span><span data-i18n="nav.skills">Keahlian</span></a></li>
+            <li><a href="#projects" class="nav-link" id="nav-item-projects"><span class="nav-number">04.</span><span data-i18n="nav.projects">Proyek</span></a></li>
+            <li><a href="#experience" class="nav-link" id="nav-item-exp"><span class="nav-number">05.</span><span data-i18n="nav.experience">Pengalaman</span></a></li>
+            <li><a href="#certifications" class="nav-link" id="nav-item-cert"><span class="nav-number">06.</span><span data-i18n="nav.certificates">Sertifikat</span></a></li>
+            <li><a href="#contact" class="nav-link" id="nav-item-contact"><span class="nav-number">07.</span><span data-i18n="nav.contact">Kontak</span></a></li>
+          </ul>
+        </nav>
 
-      <button class="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+        <!-- Header Actions: Single CV button (Unduh CV) & Language Switcher -->
+        <div class="header-actions">
+          <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" download class="nav-cv-btn" id="nav-cv-download">
+            <i class="fas fa-download"></i> <span data-i18n="nav.cv_download">Unduh CV</span>
+          </a>
+
+          <!-- Language Switcher -->
+          <div class="lang-switcher" aria-label="Language Selector" id="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="id" id="lang-btn-id" aria-label="Bahasa Indonesia">ID</button>
+            <button type="button" class="lang-btn" data-lang="en" id="lang-btn-en" aria-label="English">EN</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -49,61 +71,87 @@
       <div class="container">
         <div class="hero-grid">
           
+          <!-- Hero Text Content -->
           <div class="hero-content reveal">
-            <div class="hero-subhead">
-              <span>Sistem Informasi · STMIK Tazkia</span>
+            <div class="hero-eyebrow">
+              <i class="fas fa-graduation-cap"></i>
+              <span data-i18n="hero.eyebrow">MAHASISWI SISTEM INFORMASI • STMIK TAZKIA</span>
             </div>
 
             <h1 class="hero-title">
-              <span class="name-highlight">Rahma Fitria Tunnisa</span>
+              <span class="name-highlight" data-i18n="hero.name">Rahma Fitria Tunnisa</span>
             </h1>
 
             <div class="hero-role-pills">
-              <span class="role-pill">Backend Developer</span>
-              <span class="role-pill">Business Analyst</span>
-              <span class="role-pill">Data Enthusiast</span>
+              <span class="role-pill" data-i18n="hero.role1">Data Analyst</span>
+              <span class="role-pill" data-i18n="hero.role2">Business Analyst</span>
+              <span class="role-pill" data-i18n="hero.role3">Information Systems</span>
             </div>
 
-            <p class="hero-quote">
-              "Turning Business Problems Into Working Systems."
+            <p class="hero-quote" data-i18n="hero.quote">
+              Mahasiswi Sistem Informasi dengan pengalaman dalam pengembangan website, koordinasi proyek, dan pengembangan sistem. Memiliki ketertarikan pada analisis data serta sedang mengembangkan kemampuan di bidang SQL, Python, Data Science, dan Machine Learning.
             </p>
 
-            <div class="hero-ctas">
-              <a href="#projects" class="btn btn-primary">
-                <span>Explore My Work</span>
-                <i class="fas fa-arrow-down"></i>
+            <div class="hero-cv-group">
+              <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+                <i class="fas fa-folder-open"></i>
+                <span data-i18n="hero.btn_projects">Lihat Proyek</span>
               </a>
-              <a href="#contact" class="btn btn-secondary">
-                <span>Let's Connect</span>
+              <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" download class="btn btn-secondary" id="hero-btn-cv-download">
+                <i class="fas fa-download"></i>
+                <span data-i18n="hero.btn_cv_download">Unduh CV</span>
+              </a>
+              <a href="#contact" class="btn btn-outline" id="hero-btn-contact">
                 <i class="fas fa-paper-plane"></i>
+                <span data-i18n="hero.btn_contact">Hubungi Saya</span>
+              </a>
+              <a href="portfolio.html" class="btn btn-outline" id="hero-btn-showcase" style="border-color: var(--accent-blue-bright); color: var(--accent-blue-bright);">
+                <i class="fas fa-star"></i>
+                <span>Lihat Full Portfolio ↗</span>
               </a>
             </div>
 
             <div class="hero-stats">
               <div class="stat-item">
-                <div class="stat-number">3.79<span class="accent-text">/4.0</span></div>
-                <div class="stat-label">IPK Kumulatif</div>
+                <div class="stat-number">3.57<span class="accent-text">/4.0</span></div>
+                <div class="stat-label" data-i18n="hero.stat1_label">IPK Kumulatif</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3.80</div>
+                <div class="stat-label" data-i18n="hero.stat2_label">IP Semester 4</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">3<span class="accent-text">+</span></div>
-                <div class="stat-label">Real Client Projects</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">500<span class="accent-text">+</span></div>
-                <div class="stat-label">Active System Users</div>
+                <div class="stat-label" data-i18n="hero.stat3_label">Proyek Klien Nyata</div>
               </div>
             </div>
           </div>
 
+          <!-- Hero Image & Floating Skill Badges -->
           <div class="hero-image-wrapper reveal">
+            <!-- Subtle Floating Badges -->
+            <div class="hero-floating-pill pill-1">
+              <i class="fas fa-database"></i> <span data-i18n="hero.badge_sql">SQL Database</span>
+            </div>
+            <div class="hero-floating-pill pill-2">
+              <i class="fas fa-chart-line"></i> <span data-i18n="hero.badge_data">Data Analytics</span>
+            </div>
+            <div class="hero-floating-pill pill-3">
+              <i class="fab fa-python"></i> <span data-i18n="hero.badge_python">Python Data</span>
+            </div>
+            <div class="hero-floating-pill pill-4">
+              <i class="fas fa-laptop-code"></i> <span data-i18n="hero.badge_web">Web Development</span>
+            </div>
+
+            <!-- Profile Photo Frame -->
             <div class="profile-card">
               <div class="profile-img-frame">
-                <img src="assets/profile/WhatsApp Image 2026-08-12 at 13.01.37.jpeg" alt="Rahma Fitria Tunnisa - Profile Photo">
+                <img src="assets/profile/profile.webp" alt="Rahma Fitria Tunnisa Profile Photo" width="380" height="475">
               </div>
               <div class="profile-card-footer">
                 <div class="status-indicator">
                   <span class="status-dot"></span>
-                  <span>Available for Projects & Opportunities</span>
+                  <span data-i18n="hero.status_badge">Terbuka untuk Magang</span>
                 </div>
                 <span class="mono accent-text">ENTJ-T</span>
               </div>
@@ -119,63 +167,63 @@
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">01 / ARCHITECTURE & THINKING</div>
-          <h2 class="section-title">System Architecture Mindset</h2>
-          <p class="section-subtitle">Bagaimana saya menerjemahkan masalah operasional nyata menjadi arsitektur sistem yang handal dan teruji.</p>
-        </div>
-
-        <!-- Flow Pipeline Visual -->
-        <div class="system-flow-wrapper reveal">
-          <div class="flow-title">SYSTEM BUILD PIPELINE</div>
-          <div class="flow-steps">
-            <div class="flow-step-card">
-              <div class="flow-step-num">01</div>
-              <div class="flow-step-name">BUSINESS</div>
-            </div>
-            <div class="flow-step-card">
-              <div class="flow-step-num">02</div>
-              <div class="flow-step-name">ANALYSIS</div>
-            </div>
-            <div class="flow-step-card">
-              <div class="flow-step-num">03</div>
-              <div class="flow-step-name">SYSTEM</div>
-            </div>
-            <div class="flow-step-card">
-              <div class="flow-step-num">04</div>
-              <div class="flow-step-name">DATA</div>
-            </div>
-            <div class="flow-step-card">
-              <div class="flow-step-num">05</div>
-              <div class="flow-step-name">BUILD</div>
-            </div>
-            <div class="flow-step-card">
-              <div class="flow-step-num">06</div>
-              <div class="flow-step-name">RESULT</div>
-            </div>
-          </div>
+          <div class="section-tag" data-i18n="about.tag">01 / TENTANG SAYA</div>
+          <h2 class="section-title" data-i18n="about.title">Mahasiswi Sistem Informasi Berorientasi Solusi</h2>
+          <p class="section-subtitle" data-i18n="about.subtitle">Mahasiswi Sistem Informasi yang menggabungkan kemampuan teknis, analisis bisnis, dan pengalaman proyek nyata.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-box reveal">
-            <h3>Siapa Saya</h3>
-            <p>
-              Saya Rahma Fitria Tunnisa, mahasiswa Program Studi Sistem Informasi STMIK Tazkia yang telah menyelesaikan Semester 4 dengan IPK kumulatif 3.79 dan bersiap memasuki Semester 5.
+            <h3 data-i18n="about.box1_title">Profil &amp; Latar Belakang</h3>
+            <p data-i18n="about.p1">
+              Saya Rahma Fitria Tunnisa, mahasiswi Sistem Informasi di STMIK Tazkia. Saya telah menyelesaikan Semester 4 dengan IP Semester 3.80 dan IPK Kumulatif 3.57, serta bersiap memasuki Semester 5.
             </p>
-            <p>
-              Sejak semester 3, saya tidak hanya belajar teori di kelas, tetapi terjun langsung mengerjakan proyek untuk klien nyata — mulai dari pendataan kebutuhan (requirement gathering), merancang logika backend dan skema database, hingga memastikan sistem berproduksi dengan stabil.
+            <p data-i18n="about.p2">
+              Sejak Semester 3, saya aktif terlibat dalam proyek sistem dan website nyata — mulai dari requirement gathering bersama klien, perancangan basis data SQL, pengembangan logika backend, hingga mengkoordinasikan proyek sebagai Project Lead.
+            </p>
+            <p data-i18n="about.p3">
+              Saya memiliki ketertarikan kuat di bidang Analisis Data (Data Analysis) dan Analisis Bisnis (Business Analysis), serta terus memperdalam kemampuan teknis dalam SQL, Python, Data Science, dan Machine Learning.
             </p>
           </div>
 
           <div class="about-box reveal">
-            <h3>Fokus & Spesifikasi</h3>
-            <p>
-              Menggabungkan pemikiran analitis bisnis dengan kemampuan teknis backend untuk menciptakan solusi perangkat lunak yang memangkas waktu kerja dan mengeliminasi kesalahan manual.
-            </p>
+            <h3 data-i18n="about.box2_title">Fokus &amp; Informasi Akademik</h3>
             <ul class="spec-list">
-              <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Program Studi:</strong> Sistem Informasi</li>
-              <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Institusi:</strong> STMIK Tazkia</li>
-              <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Keminatan:</strong> Backend & Data</li>
-              <li class="spec-item"><span class="spec-bullet">▸</span> <strong>Lokasi:</strong> Bogor & Jakarta</li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_major_label">Program Studi:</strong>
+                <span data-i18n="about.spec_major_val">Sistem Informasi</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_inst_label">Institusi:</strong>
+                <span data-i18n="about.spec_inst_val">STMIK Tazkia</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_status_label">Status Akademik:</strong>
+                <span data-i18n="about.spec_status_val">Telah menyelesaikan Semester 4 • Akan memasuki Semester 5</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_gpa_label">IPK Kumulatif:</strong>
+                <span data-i18n="about.spec_gpa_val">3.57 / 4.00</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_sem4_label">IP Semester 4:</strong>
+                <span data-i18n="about.spec_sem4_val">3.80</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_focus_label">Fokus Karier:</strong>
+                <span data-i18n="about.spec_focus_val">Data Analyst / Business Analyst / Web Dev</span>
+              </li>
+              <li class="spec-item">
+                <span class="spec-bullet">▸</span>
+                <strong data-i18n="about.spec_open_label">Peluang:</strong>
+                <span data-i18n="about.spec_open_val">Terbuka untuk Magang &amp; Project Collaboration</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -183,59 +231,122 @@
       </div>
     </section>
 
-    <!-- 03 SKILLS SECTION -->
-    <section id="skills" class="section-padding">
+    <!-- 03 EDUCATION SECTION -->
+    <section id="education" class="section-padding">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-tag" data-i18n="edu.tag">02 / PENDIDIKAN</div>
+          <h2 class="section-title" data-i18n="edu.title">Latar Belakang Pendidikan</h2>
+          <p class="section-subtitle" data-i18n="edu.subtitle">Pendidikan formal yang membangun fondasi berpikir analitis, manajemen sistem informasi, dan ketelitian teknis.</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- Higher Education -->
+          <div class="edu-card reveal">
+            <div>
+              <div class="edu-level" data-i18n="edu.s1_level">Pendidikan Tinggi</div>
+              <div class="edu-school" data-i18n="edu.s1_school">STMIK Tazkia</div>
+              <div class="edu-major" data-i18n="edu.s1_major">S1 Sistem Informasi</div>
+            </div>
+            <ul class="edu-details">
+              <li><strong>Periode:</strong> <span data-i18n="edu.s1_period">2024 — Sekarang</span></li>
+              <li><strong>Status:</strong> <span data-i18n="edu.s1_status">Telah menyelesaikan Semester 4 • Akan memasuki Semester 5</span></li>
+              <li><strong>Prestasi Akademik:</strong> <span data-i18n="edu.s1_gpa">IPK Kumulatif: 3.57 / 4.00 · IP Semester 4: 3.80</span></li>
+              <li><span data-i18n="edu.s1_desc">Fokus perkuliahan: Manajemen Basis Data (SQL), Analisis &amp; Perancangan Sistem Informasi, Pemrograman Web, Rekayasa Perangkat Lunak, Data Science, dan Machine Learning.</span></li>
+            </ul>
+          </div>
+
+          <!-- Vocational High School -->
+          <div class="edu-card reveal">
+            <div>
+              <div class="edu-level" data-i18n="edu.smk_level">Sekolah Menengah Kejuruan</div>
+              <div class="edu-school" data-i18n="edu.smk_school">SMK Negeri 3 Cikarang Barat</div>
+              <div class="edu-major" data-i18n="edu.smk_major">Teknik Perancangan Gambar Mesin (TPGM)</div>
+            </div>
+            <ul class="edu-details">
+              <li><strong>Periode:</strong> <span data-i18n="edu.smk_period">2020 — 2023</span></li>
+              <li><strong>Status:</strong> <span data-i18n="edu.smk_status">Lulus 2023</span></li>
+              <li><strong>Pengalaman PKL:</strong> <span data-i18n="edu.smk_pkl">PKL: PT Yazuho Auto (Kawasan Industri Jababeka I, Cikarang)</span></li>
+              <li><strong>Periode PKL:</strong> <span data-i18n="edu.smk_pkl_period">Desember 2022 – Maret 2023 (3 Bulan)</span></li>
+              <li><span data-i18n="edu.smk_desc">Mempelajari menggambar teknik 2D/3D (AutoCAD), presisi CAD, dokumentasi teknis, dan disiplin industri.</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 SKILLS SECTION -->
+    <section id="skills" class="section-padding" style="background-color: var(--bg-darker); border-top: 1px solid var(--border-muted);">
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">02 / CAPABILITIES</div>
-          <h2 class="section-title">Technical & Analytical Stack</h2>
-          <p class="section-subtitle">Kombinasi keahlian teknis pemrograman, pengelolaan basis data, dan analisis bisnis.</p>
+          <div class="section-tag" data-i18n="skills.tag">03 / KEAHLIAN</div>
+          <h2 class="section-title" data-i18n="skills.title">Keahlian Teknis &amp; Profesional</h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">Kombinasi bahasa pemrograman, basis data, perkakas data, serta kompetensi profesional berbasis proyek nyata.</p>
         </div>
 
         <div class="skills-grid">
           
+          <!-- Category 1: Programming & Web -->
           <div class="skill-card reveal">
             <div class="skill-card-icon">
               <i class="fas fa-code"></i>
             </div>
-            <h3>Pengembangan & Database</h3>
+            <h3 data-i18n="skills.cat1_title">Pemrograman &amp; Web</h3>
             <div class="skill-tags">
-              <span class="tag">Java</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Database Management</span>
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Logic & Algorithms</span>
+              <span class="tag"><i class="fab fa-html5"></i> HTML</span>
+              <span class="tag"><i class="fab fa-css3-alt"></i> CSS</span>
+              <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tag"><i class="fab fa-python"></i> Python</span>
+              <span class="tag"><i class="fab fa-java"></i> Java</span>
             </div>
           </div>
 
+          <!-- Category 2: Database & Analytics -->
           <div class="skill-card reveal">
             <div class="skill-card-icon">
-              <i class="fas fa-chart-line"></i>
+              <i class="fas fa-database"></i>
             </div>
-            <h3>Analisis & Tools</h3>
+            <h3 data-i18n="skills.cat2_title">Basis Data &amp; Analytics</h3>
             <div class="skill-tags">
-              <span class="tag">Business Process Analysis</span>
-              <span class="tag">Requirement Gathering</span>
-              <span class="tag">VS Code</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Figma</span>
-              <span class="tag">MS Excel</span>
+              <span class="tag"><i class="fas fa-database"></i> SQL</span>
+              <span class="tag"><i class="fas fa-server"></i> PostgreSQL</span>
+              <span class="tag"><i class="fas fa-chart-line"></i> Data Analysis</span>
+              <span class="tag"><i class="fas fa-brain"></i> Data Science</span>
+              <span class="tag"><i class="fas fa-robot"></i> Machine Learning</span>
             </div>
           </div>
 
+          <!-- Category 3: Tools & Tech -->
           <div class="skill-card reveal">
             <div class="skill-card-icon">
-              <i class="fas fa-users-cog"></i>
+              <i class="fas fa-tools"></i>
             </div>
-            <h3>Soft Skills & Leadership</h3>
+            <h3 data-i18n="skills.cat3_title">Tools &amp; Teknologi</h3>
             <div class="skill-tags">
-              <span class="tag">Manajemen Tim Kecil</span>
-              <span class="tag">Public Speaking</span>
-              <span class="tag">Client Communication</span>
-              <span class="tag">Problem Solving</span>
-              <span class="tag">Presentasi Proyek</span>
+              <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tag"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tag"><i class="fas fa-cubes"></i> TensorFlow</span>
+              <span class="tag"><i class="fab fa-figma"></i> Figma</span>
+              <span class="tag"><i class="fas fa-file-excel"></i> Excel &amp; Spreadsheet</span>
+              <span class="tag"><i class="fas fa-code"></i> VS Code</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Business & Project Lead -->
+          <div class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3 data-i18n="skills.cat4_title">Bisnis &amp; Manajemen Proyek</h3>
+            <div class="skill-tags">
+              <span class="tag"><i class="fas fa-clipboard-list"></i> Requirement Gathering</span>
+              <span class="tag"><i class="fas fa-project-diagram"></i> Database Architecture</span>
+              <span class="tag"><i class="fas fa-user-tie"></i> Project Lead</span>
+              <span class="tag"><i class="fas fa-comments"></i> Client Communication</span>
+              <span class="tag"><i class="fas fa-drafting-compass"></i> AutoCAD 2D/3D</span>
             </div>
           </div>
 
@@ -244,134 +355,131 @@
       </div>
     </section>
 
-    <!-- 04 SELECTED WORK (Projects as Visual Centerpiece) -->
-    <section id="projects" class="section-padding" style="background-color: var(--bg-dark); border-top: 1px solid var(--border-muted);">
+    <!-- 05 PROJECTS SECTION -->
+    <section id="projects" class="section-padding">
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">03 / VISUAL CENTERPIECE</div>
-          <h2 class="section-title">Selected Work & Client Projects</h2>
-          <p class="section-subtitle">Sistem riil yang telah dibangun dan diimplementasikan untuk memecahkan operasional bisnis nyata.</p>
+          <div class="section-tag" data-i18n="projects.tag">04 / PROYEK</div>
+          <h2 class="section-title" data-i18n="projects.title">Proyek Pilihan &amp; Klien Nyata</h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">Sistem dan website terstruktur yang dibangun untuk menjawab kebutuhan bisnis dan operasional nyata.</p>
         </div>
 
-        <div class="projects-list">
+        <div class="projects-grid">
           
-          <!-- PROJECT 01 -->
+          <!-- PROJECT 01: Sahabat Quran -->
           <article class="project-card reveal">
-            <div class="project-media">
-              <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.jpeg" alt="Sistem Manajemen Yayasan Sahabat Quran Screen Preview">
+            <div class="project-media" data-lightbox="true" data-src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP" data-title="Sistem Manajemen Yayasan Sahabat Quran" data-category="PROYEK // 01 · KLIEN NYATA" data-description="Mendigitalkan seluruh operasional administrasi Yayasan Sahabat Quran Bogor — manajemen data santri, pendaftaran baru, rapor, presensi, dan modul keuangan terintegrasi.">
+              <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.10.WebP" alt="Sistem Sahabat Quran Preview" loading="lazy" width="600" height="375">
             </div>
             <div class="project-content">
-              <div class="project-top">
-                <span class="project-num">PROJECT // 01</span>
-                <h3 class="project-title">Sistem Manajemen Yayasan Sahabat Quran</h3>
-                
-                <div class="project-meta-grid">
-                  <div class="meta-item">
-                    <span class="meta-label">MY ROLE</span>
-                    <span class="meta-value">Backend Developer (Tim 3)</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">TECH STACK</span>
-                    <span class="meta-value">SQL, PHP/JS, Database</span>
-                  </div>
+              <div>
+                <div class="project-category">
+                  <span data-i18n="proj1.cat">PROYEK // 01 · KLIEN NYATA</span>
+                  <span class="status-badge-sm" data-i18n="proj1.status">Aktif Digunakan</span>
                 </div>
-
-                <p class="project-desc">
-                  Digitalisasi penuh seluruh operasional administrasi, pendataan santri, registrasi baru, dan modul keuangan terintegrasi di Yayasan Sahabat Quran Bogor.
+                <h3 class="project-title" data-i18n="proj1.title">Sistem Manajemen Yayasan Sahabat Quran</h3>
+                <div class="project-role-badge">
+                  <strong data-i18n="proj1.role_label">PERAN SAYA:</strong> <span data-i18n="proj1.role_val">Backend Developer (Tim 3 Orang)</span>
+                </div>
+                <p class="project-desc" data-i18n="proj1.desc">
+                  Mendigitalkan seluruh operasional administrasi Yayasan Sahabat Quran Bogor — manajemen data santri, pendaftaran baru, rapor, presensi, dan modul keuangan terintegrasi.
                 </p>
-
-                <div class="project-result-badge">
-                  <i class="fas fa-check-circle"></i>
-                  <span><strong>Hasil:</strong> Mengelola ~500 santri aktif & memangkas waktu kerja dari 1 minggu jadi hitungan menit.</span>
+                <div class="project-tech">
+                  <span class="tech-chip">SQL</span>
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Database</span>
                 </div>
               </div>
-
-              <a href="projects/sahabat-quran.html" class="btn btn-outline">
-                <span>VIEW CASE STUDY</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
-
-          <!-- PROJECT 02 -->
-          <article class="project-card reveal">
-            <div class="project-media">
-              <img src="assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.png" alt="Takka Steel Website Preview">
-            </div>
-            <div class="project-content">
-              <div class="project-top">
-                <span class="project-num">PROJECT // 02 · WEBSITE LIVE DEPLOYMENT</span>
-                <h3 class="project-title">Company Profile & Katalog Takka Steel</h3>
-                
-                <div class="project-meta-grid">
-                  <div class="meta-item">
-                    <span class="meta-label">MY ROLE</span>
-                    <span class="meta-value">Web Developer</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">TECH STACK</span>
-                    <span class="meta-value">HTML, CSS, JS, UI Design</span>
-                  </div>
-                </div>
-
-                <p class="project-desc">
-                  Platform digital resmi dan katalog produk distributor material baja & bahan bangunan terpercaya Jabodetabek dengan struktur navigasi interaktif.
-                </p>
-
-                <div class="project-result-badge">
-                  <i class="fas fa-globe"></i>
-                  <span><strong>Website Live:</strong> Siap pakai dengan rincian katalog & integrasi WhatsApp CTA.</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
-                <a href="projects/takka-steel.html" class="btn btn-outline">
-                  <span>VIEW CASE STUDY</span>
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary" data-project-detail="sahabat-quran" style="padding: 10px 18px; font-size: 0.82rem;">
+                  <i class="fas fa-search-plus"></i>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="projects/sahabat-quran.html?from=index" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.82rem;">
+                  <span data-i18n="projects.view_case">Studi Kasus</span>
                   <i class="fas fa-arrow-right"></i>
                 </a>
-                <a href="https://www.takkasteel.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  <span>VISIT LIVE WEBSITE ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: Takka Steel (Project Manager / Project Lead) -->
+          <article class="project-card reveal">
+            <div class="project-media" data-lightbox="true" data-src="assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" data-title="Company Profile &amp; Katalog — Takka Steel" data-category="PROYEK // 02 · WEBSITE LIVE" data-description="Memimpin proyek klien nyata untuk distributor baja &amp; bahan bangunan Jabodetabek dari requirement gathering hingga live deployment di takkasteel.com.">
+              <img src="assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" alt="Takka Steel Preview" loading="lazy" width="600" height="375">
+            </div>
+            <div class="project-content">
+              <div>
+                <div class="project-category">
+                  <span data-i18n="proj2.cat">PROYEK // 02 · WEBSITE LIVE</span>
+                  <span class="status-badge-sm" data-i18n="proj2.status">Selesai (Live)</span>
+                </div>
+                <h3 class="project-title" data-i18n="proj2.title">Company Profile &amp; Katalog — Takka Steel</h3>
+                <div class="project-role-badge">
+                  <strong data-i18n="proj2.role_label">PERAN SAYA:</strong> <span data-i18n="proj2.role_val">Project Manager / Project Lead</span>
+                </div>
+                <p class="project-desc" data-i18n="proj2.desc">
+                  Memimpin proyek klien nyata untuk distributor baja &amp; bahan bangunan Jabodetabek. Melakukan requirement gathering langsung dengan klien — awalnya sistem manajemen gudang, lalu dipivot menjadi website company profile setelah menemukan bahwa klien sudah memiliki WMS. Mengelola proyek dari perencanaan hingga deployment dalam ~3 minggu efektif.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-chip">HTML</span>
+                  <span class="tech-chip">CSS</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">UI Design</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary" data-project-detail="takka-steel" style="padding: 10px 14px; font-size: 0.82rem;">
+                  <i class="fas fa-search-plus"></i>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="projects/takka-steel.html?from=index" class="btn btn-outline" style="padding: 10px 14px; font-size: 0.82rem;">
+                  <span data-i18n="projects.view_case">Studi Kasus</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://www.takkasteel.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 10px 14px; font-size: 0.82rem;">
+                  <span data-i18n="projects.visit_live">Live ↗</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- PROJECT 03 -->
+          <!-- PROJECT 03: Sertifikat Kilat -->
           <article class="project-card reveal">
-            <div class="project-media">
-              <img src="assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.png" alt="SertifKilat.id Platform Preview">
+            <div class="project-media" data-lightbox="true" data-src="assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" data-title="Sertifikat Kilat — Automated Certificate Platform" data-category="PROYEK // 03 · STARTUP PLATFORM" data-description="Co-founder platform pembuatan sertifikat otomatis. Mengidentifikasi masalah pembuatan sertifikat manual yang memakan waktu 1–2 hari per batch. Membangun sistem generator massal yang menghasilkan 25 sertifikat dalam ~3–5 menit dari data spreadsheet.">
+              <img src="assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" alt="Sertifikat Kilat Preview" loading="lazy" width="600" height="375">
             </div>
             <div class="project-content">
-              <div class="project-top">
-                <span class="project-num">PROJECT // 03</span>
-                <h3 class="project-title">SertifKilat.id — Digital Certificate Engine</h3>
-                
-                <div class="project-meta-grid">
-                  <div class="meta-item">
-                    <span class="meta-label">MY ROLE</span>
-                    <span class="meta-value">Web & System Developer</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">TECH STACK</span>
-                    <span class="meta-value">QR Engine, PDF, Excel Import</span>
-                  </div>
+              <div>
+                <div class="project-category">
+                  <span data-i18n="proj3.cat">PROYEK // 03 · STARTUP PLATFORM</span>
+                  <span class="status-badge-sm" data-i18n="proj3.status">Aktif</span>
                 </div>
-
-                <p class="project-desc">
-                  Platform SaaS generator sertifikat massal instan dengan sistem verifikasi keabsahan QR code digital dan impor data peserta otomatis via Spreadsheet.
+                <h3 class="project-title" data-i18n="proj3.title">Sertifikat Kilat — Automated Certificate Platform</h3>
+                <div class="project-role-badge">
+                  <strong data-i18n="proj3.role_label">PERAN SAYA:</strong> <span data-i18n="proj3.role_val">Co-Founder (Tim 2 Orang)</span>
+                </div>
+                <p class="project-desc" data-i18n="proj3.desc">
+                  Co-founder platform pembuatan sertifikat otomatis. Mengidentifikasi masalah pembuatan sertifikat manual yang memakan waktu 1–2 hari per batch. Membangun sistem generator massal yang menghasilkan 25 sertifikat dalam ~3–5 menit dari data spreadsheet.
                 </p>
-
-                <div class="project-result-badge">
-                  <i class="fas fa-check-circle"></i>
-                  <span><strong>Hasil:</strong> Otomasi pembuatan ribuan sertifikat digital dalam hitungan detik.</span>
+                <div class="project-tech">
+                  <span class="tech-chip">QR Engine</span>
+                  <span class="tech-chip">PDF Generator</span>
+                  <span class="tech-chip">Excel Import</span>
                 </div>
               </div>
-
-              <a href="projects/sertifikat-kilat.html" class="btn btn-outline">
-                <span>VIEW CASE STUDY</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary" data-project-detail="sertifikat-kilat" style="padding: 10px 18px; font-size: 0.82rem;">
+                  <i class="fas fa-search-plus"></i>
+                  <span>Lihat Detail</span>
+                </button>
+                <a href="projects/sertifikat-kilat.html?from=index" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.82rem;">
+                  <span data-i18n="projects.view_case">Studi Kasus</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -380,50 +488,131 @@
       </div>
     </section>
 
-    <!-- 04 EXPERIENCE & PRACTICE SECTION -->
-    <section id="experience" class="section-padding">
+    <!-- 06 EXPERIENCE SECTION -->
+    <section id="experience" class="section-padding" style="background-color: var(--bg-darker); border-top: 1px solid var(--border-muted);">
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">04 / EXPERIENCE & PRACTICE</div>
-          <h2 class="section-title">Experience & Practice</h2>
-          <p class="section-subtitle">Pengalaman kerja industri, pengerjaan proyek klien, perancangan sistem backend, serta aksi pengabdian sosial.</p>
+          <div class="section-tag" data-i18n="exp.tag">05 / PENGALAMAN</div>
+          <h2 class="section-title" data-i18n="exp.title">Pengalaman &amp; Kepemimpinan</h2>
+          <p class="section-subtitle" data-i18n="exp.subtitle">Pengalaman proyek klien, magang industri (PKL), kepengurusan organisasi kampus, dan aktivitas sosial.</p>
         </div>
 
         <div class="timeline">
           
+          <!-- Experience 1: Sahabat Quran -->
           <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date">SEM 3 – SEMESTER 4</div>
-              <h3 class="timeline-role">Backend Developer</h3>
-              <div class="timeline-company">Project Client — Yayasan Sahabat Quran Bogor</div>
-              <p class="timeline-desc">
-                Memimpin perancangan logika backend, skema relasi basis data SQL, modul autentikasi pendaftaran, serta sistem rekapitulasi keuangan yayasan untuk ~500 santri aktif.
+              <div class="timeline-date" data-i18n="exp.item1_date">SEMESTER 3 – SEMESTER 4</div>
+              <h3 class="timeline-role" data-i18n="exp.item1_title">Backend Developer</h3>
+              <div class="timeline-company" data-i18n="exp.item1_org">Proyek Klien — Yayasan Sahabat Quran Bogor</div>
+              <p class="timeline-desc" data-i18n="exp.item1_desc">
+                Merancang arsitektur database SQL, modul autentikasi, presensi santri, pendaftaran online, dan modul keuangan terintegrasi untuk ~500 pengguna aktif.
               </p>
             </div>
           </div>
 
+          <!-- Experience 2: Takka Steel -->
           <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date">02 DESEMBER 2022 – 06 MARET 2023</div>
-              <h3 class="timeline-role">Praktik Kerja Industri (PKL)</h3>
-              <div class="timeline-company">PT Yazuho Auto (Kawasan Industri Jababeka I, Cikarang)</div>
-              <p class="timeline-desc">
-                Melaksanakan Praktik Kerja Industri Sistem Ganda dalam Kompetensi Keahlian Teknik Perancangan Gambar Mesin (SMK Negeri 3 Cikarang Barat) dengan predikat baik.
+              <div class="timeline-date" data-i18n="exp.item2_date">2024 (± 1 BULAN)</div>
+              <h3 class="timeline-role" data-i18n="exp.item2_title">Project Manager / Project Lead</h3>
+              <div class="timeline-company" data-i18n="exp.item2_org">Proyek Klien — Takka Steel (Distributor Bahan Bangunan)</div>
+              <p class="timeline-desc" data-i18n="exp.item2_desc">
+                Memimpin komunikasi klien, requirement gathering, timeline pengembangan, hingga pengawasan live deployment website takkasteel.com.
               </p>
             </div>
           </div>
 
+          <!-- Experience 3: PKL PT Yazuho Auto -->
           <div class="timeline-item reveal">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-date">KEGIATAN SOSIAL & KAMPUS</div>
-              <h3 class="timeline-role">Relawan Aksi "Pray for Sumatra"</h3>
-              <div class="timeline-company">Tazkia Baitulmal & STMIK Tazkia</div>
-              <p class="timeline-desc">
-                Berpartisipasi aktif dalam aksi penggalangan dana dan bantuan tanggap bencana masyarakat terdampak di Sumatra.
+              <div class="timeline-date" data-i18n="exp.item3_date">DESEMBER 2022 – MARET 2023</div>
+              <h3 class="timeline-role" data-i18n="exp.item3_title">Praktik Kerja Industri (PKL)</h3>
+              <div class="timeline-company" data-i18n="exp.item3_org">PT Yazuho Auto — Kawasan Industri Jababeka I, Cikarang</div>
+              <p class="timeline-desc" data-i18n="exp.item3_desc">
+                Melaksanakan magang industri jurusan Teknik Perancangan Gambar Mesin (TPGM). Mengaplikasikan gambar teknik presisi dan disiplin dokumentasi kerja industri.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 4: BEM STMIK Tazkia -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item4_date">PERIODE KEPENGURUSAN BEM</div>
+              <h3 class="timeline-role" data-i18n="exp.item4_title">Staf Kementerian Dalam Negeri</h3>
+              <div class="timeline-company" data-i18n="exp.item4_org">BEM STMIK Tazkia</div>
+              <p class="timeline-desc" data-i18n="exp.item4_desc">
+                Mengelola koordinasi internal BEM, merencanakan program kerja kemahasiswaan, dan memfasilitasi sesi sharing/diskusi internal mahasiswa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 5: Halaqah SDS -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item5_date">AKTIVITAS KEMAHASISWAAN</div>
+              <h3 class="timeline-role" data-i18n="exp.item5_title">Ketua Kelompok Belajar / SDS Leader</h3>
+              <div class="timeline-company" data-i18n="exp.item5_org">Halaqah Sharing Session Student (SDS) — STMIK Tazkia</div>
+              <p class="timeline-desc" data-i18n="exp.item5_desc">
+                Memimpin dan memfasilitasi diskusi kelompok belajar mahasiswi, sesi halaqah mingguan, serta bertindak sebagai Ketua Pelaksana kegiatan outdoor SDS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 6: PASKAS RJ -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item6_date">KEGIATAN KEMASYARAKATAN</div>
+              <h3 class="timeline-role" data-i18n="exp.item6_title">Anggota Aktif</h3>
+              <div class="timeline-company" data-i18n="exp.item6_org">PASKAS RJ — Remaja Masjid Roda Tojana</div>
+              <p class="timeline-desc" data-i18n="exp.item6_desc">
+                Aktif berpartisipasi dalam program keagamaan, sosial kemasyarakatan, dan kepemudaan remaja masjid.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 7: Asisten Class  -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item7_date">DOKUMENTASI AKADEMIK</div>
+              <h3 class="timeline-role" data-i18n="exp.item7_title">Asisten Pengelola Kelas </h3>
+              <div class="timeline-company" data-i18n="exp.item7_org">STMIK Tazkia</div>
+              <p class="timeline-desc" data-i18n="exp.item7_desc">
+                Membantu administrasi perkuliahan, pengolahan presensi mahasiswa, dan koordinasi aktivitas kelas mata kuliah Informatika.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 8: Panitia Portal Angkatan 3 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item8_date">KEPANITIAAN KAMPUS</div>
+              <h3 class="timeline-role" data-i18n="exp.item8_title">Panitia Portal &amp; Event Kampus</h3>
+              <div class="timeline-company" data-i18n="exp.item8_org">Angkatan 3 STMIK Tazkia</div>
+              <p class="timeline-desc" data-i18n="exp.item8_desc">
+                Menjadi panitia aktif dalam berbagai acara portal angkatan dan event resmi institusi STMIK Tazkia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 9: Relawan Pray for Sumatra -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp.item9_date">AKSI RELAWAN KEMANUSIAAN</div>
+              <h3 class="timeline-role" data-i18n="exp.item9_title">Relawan Aksi 'Pray for Sumatra'</h3>
+              <div class="timeline-company" data-i18n="exp.item9_org">Tazkia Baitulmal &amp; STMIK Tazkia</div>
+              <p class="timeline-desc" data-i18n="exp.item9_desc">
+                Terlibat aktif dalam penggalangan dana dan penyaluran bantuan tanggap bencana kemanusiaan untuk masyarakat Sumatra.
               </p>
             </div>
           </div>
@@ -433,256 +622,257 @@
       </div>
     </section>
 
-    <!-- 05 LEADERSHIP & ORGANIZATION SECTION -->
-    <section id="organization" class="section-padding" style="background-color: var(--bg-dark); border-top: 1px solid var(--border-muted);">
+    <!-- 07 CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section-padding">
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">05 / LEADERSHIP & ORGANIZATION</div>
-          <h2 class="section-title">Organisasi & Kepemimpinan</h2>
-          <p class="section-subtitle">Rekam jejak kepemimpinan, kepanitiaan event kampus, pengelolaan kelas, serta aksi sosial mahasiswi.</p>
-        </div>
-
-        <div class="timeline">
-          
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">PERIODE KEPENGURUSAN BEM</div>
-              <h3 class="timeline-role">Staf Kementerian Dalam Negeri</h3>
-              <div class="timeline-company">BEM STMIK Tazkia</div>
-              <p class="timeline-desc">
-                Mengelola koordinasi internal organisasi BEM STMIK Tazkia, perancangan program kerja kemahasiswaan, serta pelaksanaan sesi pembekalan dan sharing session.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">KEGIATAN MAHASISWI & SDS</div>
-              <h3 class="timeline-role">Ketua Kelompok Belajar</h3>
-              <div class="timeline-company">Halaqah Sharing Session Student (SDS)</div>
-              <p class="timeline-desc">
-                Memimpin dan memfasilitasi sesi diskusi kelompok belajar, halaqah pembinaan mahasiswi, serta bertindak sebagai Ketua Pelaksana / Leader pada kegiatan outdoor SDS (Student Development & Sharing).
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">DOKUMENTASI AKADEMIK</div>
-              <h3 class="timeline-role">Asisten Pengelola Kelas Agroteknologi</h3>
-              <div class="timeline-company">STMIK Tazkia</div>
-              <p class="timeline-desc">
-                Mendampingi pengelolaan administrasi kelas, presensi mahasiswa, serta kelancaran koordinasi proses pembelajaran perkuliahan Agroteknologi.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">ANGKATAN 3 STMIK TAZKIA</div>
-              <h3 class="timeline-role">Kepanitiaan Kampus</h3>
-              <div class="timeline-company">Panitia Portal & Event Kampus STMIK Tazkia</div>
-              <p class="timeline-desc">
-                Berkontribusi aktif sebagai kepanitiaan portal angkatan 3 dan berbagai penyelenggaraan event resmi di lingkungan kampus STMIK Tazkia.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 06 ACHIEVEMENTS & CERTIFICATES -->
-    <section id="achievements" class="section-padding">
-      <div class="container">
-        
-        <div class="section-header reveal">
-          <div class="section-tag">06 / CREDENTIALS</div>
-          <h2 class="section-title">Certificates & Certifications</h2>
-          <p class="section-subtitle">Bukti lisensi dan kelulusan kompetensi terverifikasi. Klik untuk melihat gambar ukuran penuh.</p>
+          <div class="section-tag" data-i18n="cert.tag">06 / SERTIFIKAT</div>
+          <h2 class="section-title" data-i18n="cert.title">Sertifikat &amp; Lisensi Kompetensi</h2>
+          <p class="section-subtitle" data-i18n="cert.subtitle">Kredensial resmi dan sertifikasi kelulusan dari lembaga pelatihan ternama, platform teknologi, dan instansi profesional.</p>
         </div>
 
         <div class="cert-grid">
           
+          <!-- Cert 1: Dicoding Machine Learning (New) -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-dicoding-datascience" 
-               data-src="assets/certificates/data.png" 
-               data-title="Belajar Dasar Data Science" 
+               data-src="assets/certificates/ml.Webp" 
+               data-title="Belajar Machine Learning untuk Pemula" 
                data-category="DICODING INDONESIA" 
-               data-description="Sertifikat kompetensi kelulusan kelas Belajar Dasar Data Science dari Dicoding Indonesia (11 Agustus 2026). Kode Verifikasi: 0LZ0JO250X65.">
+               data-description="Sertifikat kelulusan kelas Belajar Machine Learning untuk Pemula dari Dicoding Indonesia (24 Agustus 2026).">
             <div class="cert-preview">
-              <img src="assets/certificates/data.png" alt="Dicoding Data Science Certificate">
+              <img src="assets/certificates/ml.Webp" alt="Dicoding Machine Learning Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">DICODING INDONESIA</div>
-                <h3 class="cert-title">Belajar Dasar Data Science</h3>
+                <div class="cert-issuer" data-i18n="cert1.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert1.title">Belajar Machine Learning untuk Pemula</h3>
               </div>
-              <div class="cert-date">11 AGUSTUS 2026</div>
+              <div class="cert-date" data-i18n="cert1.date">24 AGUSTUS 2026</div>
             </div>
           </div>
 
+          <!-- Cert 2: Dicoding Strategi Pengembangan Diri (New) -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-dicoding-sql" 
-               data-src="assets/certificates/sql.png" 
+               data-src="assets/certificates/pengembang.WebP" 
+               data-title="Belajar Strategi Pengembangan Diri" 
+               data-category="DICODING INDONESIA" 
+               data-description="Sertifikat kelulusan kelas Belajar Strategi Pengembangan Diri dari Dicoding Indonesia (22 Agustus 2026).">
+            <div class="cert-preview">
+              <img src="assets/certificates/pengembang.WebP" alt="Dicoding Development Strategy Certificate" loading="lazy" width="400" height="300">
+              <div class="cert-overlay">
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div>
+                <div class="cert-issuer" data-i18n="cert2.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert2.title">Belajar Strategi Pengembangan Diri</h3>
+              </div>
+              <div class="cert-date" data-i18n="cert2.date">22 AGUSTUS 2026</div>
+            </div>
+          </div>
+
+          <!-- Cert 3: Dicoding Python -->
+          <div class="cert-card reveal" 
+               data-lightbox="true" 
+               data-src="assets/certificates/pyton.WebP" 
+               data-title="Memulai Pemrograman dengan Python" 
+               data-category="DICODING INDONESIA" 
+               data-description="Sertifikat kelulusan kelas Memulai Pemrograman dengan Python dari Dicoding Indonesia (15 Agustus 2026).">
+            <div class="cert-preview">
+              <img src="assets/certificates/pyton.WebP" alt="Dicoding Python Certificate" loading="lazy" width="400" height="300">
+              <div class="cert-overlay">
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div>
+                <div class="cert-issuer" data-i18n="cert3.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert3.title">Memulai Pemrograman dengan Python</h3>
+              </div>
+              <div class="cert-date" data-i18n="cert3.date">15 AGUSTUS 2026</div>
+            </div>
+          </div>
+
+          <!-- Cert 4: Dicoding SQL -->
+          <div class="cert-card reveal" 
+               data-lightbox="true" 
+               data-src="assets/certificates/sql.WebP" 
                data-title="Belajar Dasar Structured Query Language (SQL)" 
                data-category="DICODING INDONESIA" 
-               data-description="Sertifikat kompetensi kelulusan kelas Belajar Dasar SQL dari Dicoding Indonesia (12 Agustus 2026). Kode Verifikasi: MEPJMRNNJP3V.">
+               data-description="Sertifikat kelulusan kelas Belajar Dasar SQL dari Dicoding Indonesia (12 Agustus 2026).">
             <div class="cert-preview">
-              <img src="assets/certificates/sql.png" alt="Dicoding SQL Certificate">
+              <img src="assets/certificates/sql.WebP" alt="Dicoding SQL Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">DICODING INDONESIA</div>
-                <h3 class="cert-title">Belajar Dasar Structured Query Language (SQL)</h3>
+                <div class="cert-issuer" data-i18n="cert4.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert4.title">Belajar Dasar Structured Query Language (SQL)</h3>
               </div>
-              <div class="cert-date">12 AGUSTUS 2026</div>
+              <div class="cert-date" data-i18n="cert4.date">12 AGUSTUS 2026</div>
             </div>
           </div>
 
+          <!-- Cert 5: Dicoding Financial Literacy -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-dicoding-literacy" 
-               data-src="assets/certificates/literasi.png" 
+               data-src="assets/certificates/literasi.WebP" 
                data-title="Introduction to Financial Literacy" 
                data-category="DICODING INDONESIA" 
-               data-description="Sertifikat kompetensi kelulusan kelas Introduction to Financial Literacy dari Dicoding Indonesia (12 Agustus 2026). Kode Verifikasi: RVZKM9R1NXD5.">
+               data-description="Sertifikat kelulusan kelas Introduction to Financial Literacy dari Dicoding Indonesia (12 Agustus 2026).">
             <div class="cert-preview">
-              <img src="assets/certificates/literasi.png" alt="Dicoding Financial Literacy Certificate">
+              <img src="assets/certificates/literasi.WebP" alt="Dicoding Financial Literacy Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">DICODING INDONESIA</div>
-                <h3 class="cert-title">Introduction to Financial Literacy</h3>
+                <div class="cert-issuer" data-i18n="cert5.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert5.title">Introduction to Financial Literacy</h3>
               </div>
-              <div class="cert-date">12 AGUSTUS 2026</div>
+              <div class="cert-date" data-i18n="cert5.date">12 AGUSTUS 2026</div>
             </div>
           </div>
 
+          <!-- Cert 6: Dicoding Data Science -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-revou-analytics" 
-               data-src="assets/certificates/1.jpeg" 
+               data-src="assets/certificates/data.WebP" 
+               data-title="Belajar Dasar Data Science" 
+               data-category="DICODING INDONESIA" 
+               data-description="Sertifikat kelulusan kelas Belajar Dasar Data Science dari Dicoding Indonesia (11 Agustus 2026).">
+            <div class="cert-preview">
+              <img src="assets/certificates/data.WebP" alt="Dicoding Data Science Certificate" loading="lazy" width="400" height="300">
+              <div class="cert-overlay">
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div>
+                <div class="cert-issuer" data-i18n="cert6.issuer">DICODING INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert6.title">Belajar Dasar Data Science</h3>
+              </div>
+              <div class="cert-date" data-i18n="cert6.date">11 AGUSTUS 2026</div>
+            </div>
+          </div>
+
+          <!-- Cert 7: RevoU Data Analytics -->
+          <div class="cert-card reveal" 
+               data-lightbox="true" 
+               data-src="assets/certificates/revou.WebP" 
                data-title="Intro to Data Analytics (Mini Course)" 
                data-category="REVOU ACADEMY" 
-               data-description="Sertifikat kelulusan certified online course Intro to Data Analytics dari RevoU (15 August 2025). Kode Sertifikat: DAMC-11082025-01-1-Q0568.">
+               data-description="Sertifikat kelulusan course Intro to Data Analytics dari RevoU Academy (15 Agustus 2025).">
             <div class="cert-preview">
-              <img src="assets/certificates/1.jpeg" alt="RevoU Intro to Data Analytics Certificate">
+              <img src="assets/certificates/revou.WebP" alt="RevoU Data Analytics Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">REVOU ACADEMY</div>
-                <h3 class="cert-title">Intro to Data Analytics (Mini Course)</h3>
+                <div class="cert-issuer" data-i18n="cert7.issuer">REVOU ACADEMY</div>
+                <h3 class="cert-title" data-i18n="cert7.title">Intro to Data Analytics (Mini Course)</h3>
               </div>
-              <div class="cert-date">15 AGUSTUS 2025</div>
+              <div class="cert-date" data-i18n="cert7.date">15 AGUSTUS 2025</div>
             </div>
           </div>
 
+          <!-- Cert 8: DBS Foundation You RISE -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-dbs-financial" 
-               data-src="assets/certificates/dbs.png" 
-               data-title="Financial Literacy & Job Readiness (You RISE)" 
-               data-category="DBS FOUNDATION & PLAN INDONESIA" 
+               data-src="assets/certificates/dbs.WebP" 
+               data-title="Financial Literacy &amp; Job Readiness (You RISE)" 
+               data-category="DBS FOUNDATION &amp; PLAN INDONESIA" 
                data-description="Sertifikat kelulusan modul Financial Literacy & Job Readiness program You RISE powered by DBS Foundation & Plan International Indonesia (23 Juli 2026).">
             <div class="cert-preview">
-              <img src="assets/certificates/dbs.png" alt="DBS Foundation & Plan Indonesia Certificate">
+              <img src="assets/certificates/dbs.WebP" alt="DBS Foundation Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">DBS FOUNDATION & PLAN INDONESIA</div>
-                <h3 class="cert-title">Financial Literacy & Job Readiness (You RISE)</h3>
+                <div class="cert-issuer" data-i18n="cert8.issuer">DBS FOUNDATION &amp; PLAN INDONESIA</div>
+                <h3 class="cert-title" data-i18n="cert8.title">Financial Literacy &amp; Job Readiness (You RISE)</h3>
               </div>
-              <div class="cert-date">23 JULI 2026</div>
+              <div class="cert-date" data-i18n="cert8.date">23 JULI 2026</div>
             </div>
           </div>
 
+          <!-- Cert 9: STMIK Tazkia Cyber Security -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-stmik-cybersecurity" 
-               data-src="assets/certificates/saiber.png" 
-               data-title="Kuliah Perdana — Evolusi Ancaman Cyber & Pertahanannya" 
+               data-src="assets/certificates/saiber.WebP" 
+               data-title="Kuliah Perdana — Evolusi Ancaman Cyber &amp; Pertahanannya" 
                data-category="STMIK TAZKIA" 
-               data-description="Sertifikat apresiasi peserta Kuliah Perdana STMIK Tazkia Semester Ganjil TA 2024/2025 'Perang Tanpa Peluru: Evolusi Ancaman Cyber & Pertahanannya' (09 Oktober 2024).">
+               data-description="Sertifikat peserta Kuliah Perdana STMIK Tazkia 'Evolusi Ancaman Cyber & Pertahanannya' (09 Oktober 2024).">
             <div class="cert-preview">
-              <img src="assets/certificates/saiber.png" alt="STMIK Tazkia Cyber Security Certificate">
+              <img src="assets/certificates/saiber.WebP" alt="STMIK Tazkia Cyber Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">STMIK TAZKIA</div>
-                <h3 class="cert-title">Evolusi Ancaman Cyber & Pertahanannya</h3>
+                <div class="cert-issuer" data-i18n="cert9.issuer">STMIK TAZKIA</div>
+                <h3 class="cert-title" data-i18n="cert9.title">Kuliah Perdana — Evolusi Ancaman Cyber &amp; Pertahanannya</h3>
               </div>
-              <div class="cert-date">09 OKTOBER 2024</div>
+              <div class="cert-date" data-i18n="cert9.date">09 OKTOBER 2024</div>
             </div>
           </div>
 
+          <!-- Cert 10: B-TECH LLM AI -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-btech-ai" 
-               data-src="assets/certificates/btech.png" 
+               data-src="assets/certificates/btech.WebP" 
                data-title="Webinar: Large Language Model Artificial Intelligence" 
-               data-category="BOGOR TECHNOPRENEUR COMMUNITY" 
-               data-description="Sertifikat partisipasi peserta webinar 'Large Language Model Artificial Intelligence' diselenggarakan oleh Bogor Technopreneur Community (B-TECH) (14 Juni 2025). No: 0018/ST/BPA-10/VI/2025.">
+               data-category="BOGOR TECHNOPRENEUR COMMUNITY (B-TECH)" 
+               data-description="Sertifikat webinar LLM Artificial Intelligence diselenggarakan oleh B-TECH (14 Juni 2025).">
             <div class="cert-preview">
-              <img src="assets/certificates/btech.png" alt="B-TECH LLM AI Certificate">
+              <img src="assets/certificates/btech.WebP" alt="B-TECH AI Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">BOGOR TECHNOPRENEUR COMMUNITY</div>
-                <h3 class="cert-title">Large Language Model Artificial Intelligence</h3>
+                <div class="cert-issuer" data-i18n="cert10.issuer">BOGOR TECHNOPRENEUR COMMUNITY (B-TECH)</div>
+                <h3 class="cert-title" data-i18n="cert10.title">Webinar: Large Language Model Artificial Intelligence</h3>
               </div>
-              <div class="cert-date">14 JUNI 2025</div>
+              <div class="cert-date" data-i18n="cert10.date">14 JUNI 2025</div>
             </div>
           </div>
 
+          <!-- Cert 11: PT Yazuho Auto PKL -->
           <div class="cert-card reveal" 
                data-lightbox="true" 
-               data-id="cert-yazuho-pkl" 
-               data-src="assets/certificates/pkl.png" 
+               data-src="assets/certificates/pkl.WebP" 
                data-title="Sertifikat Praktek Kerja Industri (PKL)" 
                data-category="PT YAZUHO AUTO" 
-               data-description="Sertifikat Praktik Kerja Industri Sistem Ganda PT Yazuho Auto Jababeka I Cikarang bidang Teknik Perancangan Gambar Mesin (28 Maret 2023). No: 262/YA/SERT-PKL/Maret/2023.">
+               data-description="Sertifikat Resmi Praktik Kerja Industri PT Yazuho Auto Cikarang bidang Teknik Perancangan Gambar Mesin (28 Maret 2023).">
             <div class="cert-preview">
-              <img src="assets/certificates/pkl.png" alt="PT Yazuho Auto PKL Certificate">
+              <img src="assets/certificates/pkl.WebP" alt="PT Yazuho Auto PKL Certificate" loading="lazy" width="400" height="300">
               <div class="cert-overlay">
-                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> View Certificate</span>
+                <span class="cert-overlay-btn"><i class="fas fa-search-plus"></i> <span data-i18n="cert.view_btn">Lihat Sertifikat</span></span>
               </div>
             </div>
             <div class="cert-info">
               <div>
-                <div class="cert-issuer">PT YAZUHO AUTO</div>
-                <h3 class="cert-title">Sertifikat Praktek Kerja Industri (PKL)</h3>
+                <div class="cert-issuer" data-i18n="cert11.issuer">PT YAZUHO AUTO</div>
+                <h3 class="cert-title" data-i18n="cert11.title">Sertifikat Praktek Kerja Industri (PKL)</h3>
               </div>
-              <div class="cert-date">28 MARET 2023</div>
+              <div class="cert-date" data-i18n="cert11.date">28 MARET 2023</div>
             </div>
           </div>
 
@@ -691,185 +881,132 @@
       </div>
     </section>
 
-    <!-- 07 DOKUMENTASI KEGIATAN (Visual Gallery / Archive) -->
-    <section id="system" class="section-padding" style="background-color: var(--bg-dark); border-top: 1px solid var(--border-muted);">
+    <!-- 08 EVIDENCE ARCHIVE / ACTIVITY GALLERY -->
+    <section id="gallery" class="section-padding" style="background-color: var(--bg-darker); border-top: 1px solid var(--border-muted);">
       <div class="container">
         
         <div class="section-header reveal">
-          <div class="section-tag">07 / EVIDENCE ARCHIVE</div>
-          <h2 class="section-title">Dokumentasi Kegiatan</h2>
-          <p class="section-subtitle">Dokumentasi nyata kegiatan organisasi BEM, kepanitiaan angkatan, kepemimpinan SDS, halaqoh, aktivitas akademik kampus, dan pengabdian relawan.</p>
+          <div class="section-tag" data-i18n="gallery.tag">07 / DOKUMENTASI KEGIATAN</div>
+          <h2 class="section-title" data-i18n="gallery.title">Dokumentasi &amp; Bukti Kegiatan</h2>
+          <p class="section-subtitle" data-i18n="gallery.subtitle">Dokumentasi kegiatan organisasi BEM, kepanitiaan angkatan, kepemimpinan SDS, halaqah, dan kolaborasi proyek.</p>
         </div>
 
-        <!-- PRIMARY GALLERY: ORGANISASI & KEGIATAN KAMPUS -->
         <div class="gallery-grid">
           
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-bem-sharing" 
-               data-src="assets/documentation/organization/bem 1 .png" 
-               data-title="BEM — Sharing Session" 
-               data-category="ORGANISASI / BEM" 
-               data-description="Sesi pembekalan materi, sharing experience, dan diskusi seputar Peduli Mental Health yang diselenggarakan oleh BEM STMIK Tazkia di ruang perpustakaan.">
-            <img src="assets/documentation/organization/bem 1 .png" alt="BEM Sharing Session Perpustakaan">
+               data-src="assets/documentation/organization/bem-1.WebP" 
+               data-title="BEM STMIK Tazkia — Sharing Session" 
+               data-description="Sesi sharing experience dan pembekalan materi kepemimpinan BEM STMIK Tazkia di perpustakaan.">
+            <img src="assets/documentation/organization/bem-1.WebP" alt="BEM Sharing Session" loading="lazy" width="300" height="225">
             <div class="gallery-caption">BEM — Sharing Session</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-bem-discussion" 
-               data-src="assets/documentation/organization/bem 2 .png" 
-               data-title="BEM — Diskusi Internal & Program Kerja" 
-               data-category="ORGANISASI / BEM" 
-               data-description="Rapat internal pengurus BEM STMIK Tazkia dalam merencanakan program kerja organisasi, koordinasi divisi, dan evaluasi kegiatan.">
-            <img src="assets/documentation/organization/bem 2 .png" alt="BEM Diskusi Internal Kelas">
+               data-src="assets/documentation/organization/bem-2.WebP" 
+               data-title="BEM STMIK Tazkia — Diskusi Internal" 
+               data-description="Rapat koordinasi dan evaluasi program kerja BEM STMIK Tazkia.">
+            <img src="assets/documentation/organization/bem-2.WebP" alt="BEM Internal Discussion" loading="lazy" width="300" height="225">
             <div class="gallery-caption">BEM — Diskusi Internal</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-angkatan-3" 
-               data-src="assets/documentation/teamwork/panitia portal.png" 
-               data-title="Angkatan 3 — Kepanitiaan" 
-               data-category="KEPANITIAAN / ANGKATAN 3" 
-               data-description="Dokumentasi kepanitiaan portal dan foto kebersamaan kolaborasi angkatan 3 STMIK Tazkia di aula auditorium kampus.">
-            <img src="assets/documentation/teamwork/panitia portal.png" alt="Angkatan 3 Kepanitiaan Portal">
-            <div class="gallery-caption">Angkatan 3 — Kepanitiaan</div>
+               data-src="assets/documentation/teamwork/panitia-portal.WebP" 
+               data-title="Angkatan 3 STMIK Tazkia — Kepanitiaan Portal" 
+               data-description="Foto bersama tim panitia event portal Angkatan 3 STMIK Tazkia di auditorium.">
+            <img src="assets/documentation/teamwork/panitia-portal.WebP" alt="Panitia Portal Angkatan 3" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">Angkatan 3 — Kepanitiaan Portal</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-sbs-leadership" 
-               data-src="assets/documentation/teamwork/sds/holakoh.png" 
-               data-title="SBS — Leadership" 
-               data-category="LEADERSHIP / SBS" 
-               data-description="Dokumentasi kegiatan outdoor SBS (Student Development & Sharing) di mana Rahma bertindak sebagai Ketua Pelaksana / Leader acara.">
-            <img src="assets/documentation/teamwork/sds/holakoh.png" alt="SBS Leadership Outdoor Group">
-            <div class="gallery-caption">SDS — Leadership</div>
+               data-src="assets/documentation/teamwork/sds/holakoh.WebP" 
+               data-title="SDS Leadership — Outdoor Activity" 
+               data-description="Kegiatan outdoor SDS (Student Development & Sharing) dengan Rahma sebagai Leader / Ketua Pelaksana.">
+            <img src="assets/documentation/teamwork/sds/holakoh.WebP" alt="SDS Outdoor Leadership" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">SDS — Leadership Outdoor</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-halaqoh-sharing" 
-               data-src="assets/documentation/teamwork/sds/holakoh2.png" 
-               data-title="Halaqoh — Student Sharing Session" 
-               data-category="STUDENT SHARING / HALAQOH" 
-               data-description="Sesi pembinaan karakter, halaqoh mingguan, dan student sharing session antar mahasiswi STMIK Tazkia.">
-            <img src="assets/documentation/teamwork/sds/holakoh2.png" alt="Halaqoh Student Sharing Session">
-            <div class="gallery-caption">Halaqoh — Student Sharing Session</div>
+               data-src="assets/documentation/teamwork/sds/holakoh2.WebP" 
+               data-title="Halaqah — Student Sharing Session" 
+               data-description="Sesi pembinaan halaqah dan diskusi mingguan kelompok belajar SDS.">
+            <img src="assets/documentation/teamwork/sds/holakoh2.WebP" alt="Halaqah Student Sharing" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">Halaqah — Student Sharing</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-campus-life" 
-               data-src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" 
-               data-title="Campus Life" 
-               data-category="CAMPUS LIFE" 
-               data-description="Dokumentasi kegiatan perkuliahan, presentasi materi proyek, dan suasana akademik di auditorium STMIK Tazkia.">
-            <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" alt="Campus Life Auditorium Presentation">
-            <div class="gallery-caption">Campus Life</div>
+               data-src="assets/documentation/activities/sumatra.WebP" 
+               data-title="Relawan — Pray for Sumatra Banner" 
+               data-description="Aksi penggalangan dana dan bantuan kemanusiaan tanggap bencana Pray for Sumatra.">
+            <img src="assets/documentation/activities/sumatra.WebP" alt="Pray for Sumatra Banner" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">Pray for Sumatra — Relawan</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-pray-sumatra-banner" 
-               data-src="assets/documentation/activities/sumatra .png" 
-               data-title="Pray For Sumatra — Aksi Relawan" 
-               data-category="VOLUNTEER / COMMUNITY" 
-               data-description="Aksi penggalangan dana dan bantuan kemanusiaan tanggap bencana 'Pray For Sumatra' bersama Tazkia Baitulmal & STMIK Tazkia.">
-            <img src="assets/documentation/activities/sumatra .png" alt="Relawan Pray for Sumatra Banner">
-            <div class="gallery-caption">Pray For Sumatra — Aksi Relawan</div>
+               data-src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP" 
+               data-title="Development Team — Sahabat Quran Project" 
+               data-description="Tim pengembang sistem informasi Yayasan Sahabat Quran setelah prapresentasi proyek di auditorium campus.">
+            <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP" alt="Tim Developer Sahabat Quran" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">Tim Proyek — Sahabat Quran</div>
           </div>
 
           <div class="gallery-item reveal" 
                data-lightbox="true" 
-               data-id="doc-pray-sumatra-briefing" 
-               data-src="assets/documentation/activities/sumatra2.png" 
-               data-title="Pray For Sumatra — Briefing Lapangan & Bendera" 
-               data-category="VOLUNTEER / COMMUNITY" 
-               data-description="Koordinasi dan briefing singkat tim relawan di lapangan di depan bendera/spanduk utama sebelum penggalangan dana.">
-            <img src="assets/documentation/activities/sumatra2.png" alt="Briefing Relawan Lapangan Pray For Sumatra">
-            <div class="gallery-caption">Pray For Sumatra — Briefing Lapangan</div>
+               data-src="assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.WebP" 
+               data-title="Client Field Visit — Takka Steel Project" 
+               data-description="Kunjungan lapangan dan requirement gathering tim web developer di gudang fisik Takka Steel.">
+            <img src="assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.WebP" alt="Tim Proyek Takka Steel Visit" loading="lazy" width="300" height="225">
+            <div class="gallery-caption">Tim Proyek — Takka Steel Visit</div>
           </div>
 
-        </div>
-
-        <!-- SECONDARY GALLERY: DOKUMENTASI PROYEK & TIM DEVELOPMENT -->
-        <div style="margin-top: 3rem;">
-          <h3 class="reveal" style="font-family: var(--font-tech); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--accent-red); text-transform: uppercase; margin-bottom: 1.25rem;">
-            // DOKUMENTASI PROYEK & TIM DEVELOPMENT
-          </h3>
-
-          <div class="gallery-grid">
-            
-            <div class="gallery-item reveal" 
-                 data-lightbox="true" 
-                 data-id="doc-dev-team-sq" 
-                 data-src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.jpeg" 
-                 data-title="Development Team — Sahabat Quran" 
-                 data-category="PROJECT EVIDENCE / TIM DEVELOPER" 
-                 data-description="Tim pengembang backend & sistem informasi Yayasan Sahabat Quran setelah prapresentasi proyek di auditorium.">
-              <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.jpeg" alt="Tim Pengembang Sahabat Quran">
-              <div class="gallery-caption">Development Team — Sahabat Quran</div>
-            </div>
-
-            <div class="gallery-item reveal" 
-                 data-lightbox="true" 
-                 data-id="doc-dev-team-takka" 
-                 data-src="assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" 
-                 data-title="Tim Proyek & Kunjungan Klien — Takka Steel" 
-                 data-category="PROJECT EVIDENCE / KUNJUNGAN KLIEN" 
-                 data-description="Dokumentasi kunjungan lapangan tim web developer di depan toko & gudang fisik Takka Steel.">
-              <img src="assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.jpeg" alt="Tim Proyek Takka Steel">
-              <div class="gallery-caption">Tim Proyek — Takka Steel</div>
-            </div>
-
-            <div class="gallery-item reveal" 
-                 data-lightbox="true" 
-                 data-id="doc-dev-team-sk" 
-                 data-src="assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.jpeg" 
-                 data-title="Certificate Follow-up — SertifKilat.id" 
-                 data-category="PROJECT EVIDENCE / SYSTEM SHOWCASE" 
-                 data-description="Sesi showcase dan pengujian fitur generator sertifikat massal & QR verification platform SertifKilat.id.">
-              <img src="assets/projects/sertifikat-kilat/WhatsApp Image 2026-08-11 at 13.10.12.jpeg" alt="Showcase SertifKilat">
-              <div class="gallery-caption">Certificate Follow-up — SertifKilat.id</div>
-            </div>
-
-          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 08 CONTACT SECTION -->
-    <section id="contact" class="section-padding contact-section">
+    <!-- 09 CONTACT SECTION -->
+    <section id="contact" class="section-padding">
       <div class="container">
         
         <div class="contact-card reveal">
-          <div class="section-tag" style="justify-content: center;">07 / CONNECT</div>
-          <h2 class="contact-title">Let's Build Working Systems Together.</h2>
-          <p class="contact-desc">
-            Tertarik berdiskusi mengenai proyek sistem backend, analisis kebutuhan bisnis, atau kolaborasi data? Mari terhubung langsung.
+          <div class="section-tag" style="justify-content: center;" data-i18n="contact.tag">08 / KONTAK</div>
+          <h2 class="contact-title" data-i18n="contact.title">Mari Terhubung &amp; Berkolaborasi</h2>
+          <p class="contact-desc" data-i18n="contact.subtitle">
+            Tertarik berdiskusi mengenai proyek analisis data, pengembangan sistem informasi, atau peluang magang? Jangan ragu untuk menghubungi saya.
           </p>
 
           <div class="contact-links-grid">
-            <a href="https://wa.link/4pl1ji" target="_blank" rel="noopener noreferrer" class="contact-chip">
-              <i class="fab fa-whatsapp"></i>
-              <span>WhatsApp Direct</span>
+            <a href="https://wa.link/4pl1ji" target="_blank" rel="noopener noreferrer" class="contact-chip" id="contact-whatsapp">
+              <i class="fab fa-whatsapp" style="color: #22c55e;"></i>
+              <span data-i18n="contact.btn_whatsapp">WhatsApp</span>
             </a>
-            <a href="https://www.linkedin.com/in/rahma-fitria-tunnisa-91470b333/" target="_blank" rel="noopener noreferrer" class="contact-chip">
-              <i class="fab fa-linkedin-in"></i>
-              <span>LinkedIn Profile</span>
+            <a href="https://www.linkedin.com/in/rahma-fitria-tunnisa-91470b333/" target="_blank" rel="noopener noreferrer" class="contact-chip" id="contact-linkedin">
+              <i class="fab fa-linkedin" style="color: #0077b5;"></i>
+              <span data-i18n="contact.btn_linkedin">LinkedIn</span>
             </a>
-            <a href="https://github.com/nisa262006" target="_blank" rel="noopener noreferrer" class="contact-chip">
+            <a href="https://github.com/nisa262006" target="_blank" rel="noopener noreferrer" class="contact-chip" id="contact-github">
               <i class="fab fa-github"></i>
-              <span>GitHub Repository</span>
+              <span data-i18n="contact.btn_github">GitHub</span>
+            </a>
+            <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" target="_blank" rel="noopener noreferrer" class="contact-chip" id="contact-cv-view">
+              <i class="fas fa-eye"></i>
+              <span data-i18n="contact.btn_cv_view">Lihat CV</span>
+            </a>
+            <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" download class="contact-chip" id="contact-cv-download">
+              <i class="fas fa-file-pdf" style="color: #ef4444;"></i>
+              <span data-i18n="contact.btn_cv_download">Unduh CV</span>
             </a>
           </div>
 
-          <a href="https://wa.link/4pl1ji" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <span>Start A Conversation</span>
-            <i class="fas fa-comment-alt"></i>
+          <a href="https://wa.link/4pl1ji" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="contact-cta">
+            <span data-i18n="contact.cta">Hubungi Saya Sekarang</span>
+            <i class="fas fa-paper-plane"></i>
           </a>
         </div>
 
@@ -881,7 +1018,7 @@
   <div id="lightbox-modal" class="modal-overlay" aria-hidden="true">
     <div class="modal-container">
       <button id="modal-close" class="modal-close" aria-label="Close Lightbox">&times;</button>
-      <img id="modal-img" src="" alt="Full Resolution Certificate or Evidence" class="modal-img">
+      <img id="modal-img" src="" alt="Full Preview" class="modal-img">
       <div id="modal-caption" class="modal-caption"></div>
     </div>
   </div>
@@ -890,17 +1027,23 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        © 2026 Rahma Fitria Tunnisa. Built with System Architecture Mindset.
+        <strong>Rahma Fitria Tunnisa</strong> — <span data-i18n="footer.role">Mahasiswi Sistem Informasi STMIK Tazkia</span><br>
+        <span data-i18n="footer.copyright">© 2026 Rahma Fitria Tunnisa. Dibuat dengan HTML, CSS &amp; JavaScript.</span>
       </div>
-      <div>
-        <span class="mono">ENTJ-T · IPK 3.79 · STMIK TAZKIA</span>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://www.linkedin.com/in/rahma-fitria-tunnisa-91470b333/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/nisa262006" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://wa.link/4pl1ji" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <span class="mono accent-text" style="font-size: 0.8rem;" data-i18n="footer.gpa">IPK Kumulatif: 3.57 / 4.00</span>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Custom Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/project-modal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
