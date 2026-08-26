@@ -93,5 +93,40 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(s => observer.observe(s));
   }
 
+  // 6. PDF Export Handler with Image Pre-loading Guard
+  const printDeckBtn = document.getElementById('contact-export-pdf');
+  if (printDeckBtn) {
+    printDeckBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const deck = document.getElementById('print-deck');
+      if (!deck) {
+        window.print();
+        return;
+      }
+      const imgs = Array.from(deck.querySelectorAll('img'));
+      const promises = imgs.map(img => {
+        if (img.complete && img.naturalHeight !== 0) {
+          return Promise.resolve();
+        }
+        return new Promise(resolve => {
+          img.onload = resolve;
+          img.onerror = resolve;
+        });
+      });
+
+      const prevCursor = document.body.style.cursor;
+      document.body.style.cursor = 'wait';
+
+      Promise.all(promises).then(() => {
+        document.body.style.cursor = prevCursor;
+        window.print();
+      }).catch(() => {
+        document.body.style.cursor = prevCursor;
+        window.print();
+      });
+    });
+  }
+
   console.log('Portfolio initialized — Rahma Fitria Tunnisa | CV_URL:', CV_URL);
 });
+

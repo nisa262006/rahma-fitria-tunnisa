@@ -2309,3 +2309,399 @@ body.theme-index .site-footer {
   color: #94a3b8;
 }
 
+/* ============================================================
+   ISOLATED PRINT DECK & POWERPOINT 16:9 PDF EXPORT STYLES
+   ============================================================ */
+
+/* Hide print deck completely during normal screen browsing */
+#print-deck,
+.print-deck {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html, body {
+    background: #070a12 !important;
+    color: #f8fafc !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 297mm !important;
+    height: 210mm !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all normal web elements */
+  body > *:not(#print-deck),
+  header, nav, main, footer, .navbar, .site-header, .site-footer, .modal-overlay, #back-to-top, #stars-canvas, .hero-bg, .hero-section, section {
+    display: none !important;
+  }
+
+  /* Show presentation deck ONLY */
+  #print-deck,
+  .print-deck {
+    display: block !important;
+    width: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #070a12 !important;
+  }
+
+  .pdf-slide {
+    width: 297mm !important;
+    height: 210mm !important;
+    box-sizing: border-box !important;
+    padding: 10mm 15mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    background: #0b0f19 !important;
+    border: none !important;
+  }
+
+  .pdf-slide:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* Slide Themes */
+  .pdf-slide.theme-index-pdf {
+    background: #0b0f19 !important;
+    color: #f8fafc !important;
+  }
+
+  .pdf-slide.theme-portfolio-pdf {
+    background: #080612 !important;
+    color: #f8fafc !important;
+  }
+
+  /* Slide Header Bar */
+  .slide-header-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .slide-tag {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    color: #60a5fa !important;
+  }
+
+  .theme-portfolio-pdf .slide-tag {
+    color: #c084fc !important;
+  }
+
+  .slide-author-badge {
+    font-size: 9pt !important;
+    color: #94a3b8 !important;
+  }
+
+  .slide-title {
+    font-size: 18pt !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Slide Content Area */
+  .slide-content-body {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Cover Slide Layout */
+  .cover-slide-layout {
+    display: grid !important;
+    grid-template-columns: 210px 1fr !important;
+    gap: 30px !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  .cover-avatar-box {
+    width: 190px !important;
+    height: 190px !important;
+    border-radius: 50% !important;
+    border: 3px solid #60a5fa !important;
+    overflow: hidden !important;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3) !important;
+    background: #0f172a !important;
+  }
+
+  .theme-portfolio-pdf .cover-avatar-box {
+    border-color: #c084fc !important;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3) !important;
+  }
+
+  .cover-avatar-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .cover-slide-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .cover-eyebrow {
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    color: #60a5fa !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .theme-portfolio-pdf .cover-eyebrow {
+    color: #c084fc !important;
+  }
+
+  .cover-main-name {
+    font-size: 32pt !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    margin: 0 0 8px 0 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.1 !important;
+  }
+
+  .cover-role-line {
+    font-size: 13pt !important;
+    color: #94a3b8 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .cover-pills {
+    display: flex !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .cover-pill {
+    padding: 5px 14px !important;
+    border-radius: 30px !important;
+    font-size: 9.5pt !important;
+    font-weight: 600 !important;
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #60a5fa !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  }
+
+  .theme-portfolio-pdf .cover-pill {
+    background: rgba(168, 85, 247, 0.15) !important;
+    color: #c084fc !important;
+    border-color: rgba(168, 85, 247, 0.3) !important;
+  }
+
+  /* Two Column Slide Layout */
+  .slide-two-col {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    height: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .slide-card-box {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .theme-portfolio-pdf .slide-card-box {
+    background: rgba(18, 16, 43, 0.85) !important;
+    border-color: rgba(168, 85, 247, 0.25) !important;
+  }
+
+  .slide-card-title {
+    font-size: 13.5pt !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+  }
+
+  .slide-card-desc {
+    font-size: 9.5pt !important;
+    line-height: 1.55 !important;
+    color: #cbd5e1 !important;
+  }
+
+  /* 3 Card Grid Slide */
+  .slide-three-cards {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+    height: 100% !important;
+    align-items: stretch !important;
+  }
+
+  /* Project Case Study Slide */
+  .slide-case-study {
+    display: grid !important;
+    grid-template-columns: 1.1fr 1.2fr !important;
+    gap: 20px !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  .case-img-box {
+    width: 100% !important;
+    height: 310px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: #020617 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .case-img-box img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 4px !important;
+  }
+
+  /* 3 columns x 2 rows Certifications Grid */
+  .slide-cert-grid-3x2 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    height: 100% !important;
+  }
+
+  .slide-cert-card-sm {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .theme-portfolio-pdf .slide-cert-card-sm {
+    background: rgba(18, 16, 43, 0.85) !important;
+    border-color: rgba(168, 85, 247, 0.25) !important;
+  }
+
+  .slide-cert-card-sm .cert-img-container {
+    width: 100% !important;
+    height: 100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #020617 !important;
+    border-radius: 6px !important;
+    padding: 4px !important;
+    margin-bottom: 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .slide-cert-card-sm img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .slide-cert-card-sm h4 {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin: 0 0 3px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .slide-cert-card-sm p {
+    font-size: 8pt !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+  }
+
+  /* 4 columns x 2 rows Documentation Grid */
+  .slide-doc-grid-4x2 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    height: 100% !important;
+  }
+
+  .slide-doc-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  .theme-portfolio-pdf .slide-doc-card {
+    background: rgba(18, 16, 43, 0.85) !important;
+    border-color: rgba(168, 85, 247, 0.25) !important;
+  }
+
+  .slide-doc-card img {
+    width: 100% !important;
+    height: 110px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+  }
+
+  .slide-doc-card-title {
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-top: 6px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Slide Footer */
+  .slide-footer-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 6px !important;
+    font-size: 8.5pt !important;
+    color: #64748b !important;
+  }
+}
+
+

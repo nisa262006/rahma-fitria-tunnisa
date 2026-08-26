@@ -990,10 +990,10 @@
               <i class="fab fa-github"></i>
               <span data-i18n="contact.btn_github">GitHub</span>
             </a>
-            <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" target="_blank" rel="noopener noreferrer" class="contact-chip" id="contact-cv-view">
-              <i class="fas fa-eye"></i>
-              <span data-i18n="contact.btn_cv_view">Lihat CV</span>
-            </a>
+            <button type="button" class="contact-chip" id="contact-export-pdf" onclick="window.print()" style="background: transparent; border: 1px solid var(--border-accent); color: var(--text-light); cursor: pointer;">
+              <i class="fas fa-file-export" style="color: #60a5fa;"></i>
+              <span data-i18n="contact.btn_export_pdf">Unduh PDF</span>
+            </button>
             <a href="assets/cv/Rahma-Fitria-Tunnisa-CV.pdf" download class="contact-chip" id="contact-cv-download">
               <i class="fas fa-file-pdf" style="color: #ef4444;"></i>
               <span data-i18n="contact.btn_cv_download">Unduh CV</span>
@@ -1041,5 +1041,438 @@
   <script src="js/gallery.js"></script>
   <script src="js/project-modal.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    /* PDF Export Handler with Image Pre-loading Guard */
+    const printDeckBtn = document.getElementById('contact-export-pdf');
+    if (printDeckBtn) {
+      printDeckBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const deck = document.getElementById('print-deck');
+        if (!deck) {
+          window.print();
+          return;
+        }
+        const imgs = Array.from(deck.querySelectorAll('img'));
+        const promises = imgs.map(function(img) {
+          if (img.complete && img.naturalHeight !== 0) {
+            return Promise.resolve();
+          }
+          return new Promise(function(resolve) {
+            img.onload = resolve;
+            img.onerror = resolve;
+          });
+        });
+
+        const prevCursor = document.body.style.cursor;
+        document.body.style.cursor = 'wait';
+
+        Promise.all(promises).then(function() {
+          document.body.style.cursor = prevCursor;
+          window.print();
+        }).catch(function() {
+          document.body.style.cursor = prevCursor;
+          window.print();
+        });
+      });
+    }
+  </script>
+
+  <!-- SEPARATE PRINT-ONLY PRESENTATION DECK (Hidden on screen, active ONLY during window.print()) -->
+  <div id="print-deck" class="print-deck">
+
+    <!-- SLIDE 01: COVER WITH PROFILE PHOTO -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">PORTOFOLIO PRESENTATION</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <div class="slide-content-body">
+        <div class="cover-slide-layout">
+          <div class="cover-avatar-box">
+            <img src="assets/profile/profile.webp" alt="Rahma Fitria Tunnisa Profile">
+          </div>
+          <div class="cover-slide-content">
+            <div class="cover-eyebrow" data-i18n="hero.eyebrow">MAHASISWI SISTEM INFORMASI • STMIK TAZKIA</div>
+            <h1 class="cover-main-name" data-i18n="hero.name">Rahma Fitria Tunnisa</h1>
+            <div class="cover-role-line">Data Analyst &nbsp;|&nbsp; Business Analyst &nbsp;|&nbsp; Information Systems</div>
+            <div class="cover-pills">
+              <span class="cover-pill">IPK Kumulatif: 3.57 / 4.00</span>
+              <span class="cover-pill">Bogor, Jawa Barat, Indonesia</span>
+              <span class="cover-pill">rahmafitriatunnisa@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 01 / 10 — Cover &amp; Executive Overview</span>
+        <span>nisa262006.github.io/rahma-fitria-tunnisa/</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 02: ABOUT & EDUCATION -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">01 / PROFIL &amp; PENDIDIKAN</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title" data-i18n="about.title">Profil Profesional &amp; Latar Belakang Akademik</h2>
+      <div class="slide-content-body">
+        <div class="slide-two-col">
+          <div class="slide-card-box">
+            <h3 class="slide-card-title">Ringkasan Eksekutif</h3>
+            <p class="slide-card-desc" data-i18n="about.bio_p1">
+              Mahasiswi Sistem Informasi STMIK Tazkia semester 4 yang berfokus pada Analisis Data, Pemodelan Proses Bisnis, dan Pengembangan Sistem Informasi Enterprise.
+            </p>
+            <p class="slide-card-desc" style="margin-top: 12px;" data-i18n="about.bio_p2">
+              Terbiasa mengolah data kompleks menggunakan SQL, Python, dan Spreadsheet untuk menghasilkan insight bisnis yang actionable serta membangun aplikasi web berbasis HTML, CSS, dan JavaScript.
+            </p>
+          </div>
+          <div class="slide-card-box">
+            <h3 class="slide-card-title">Pendidikan Formal</h3>
+            <div style="font-size: 11pt; font-weight: 700; color: #60a5fa; margin-bottom: 4px;">S1 Sistem Informasi — STMIK Tazkia</div>
+            <div style="font-size: 9.5pt; color: #94a3b8; margin-bottom: 10px;">2024 – Sekarang (Semester 4) &bull; Bogor, Indonesia</div>
+            <ul style="font-size: 9.5pt; color: #cbd5e1; margin: 0; padding-left: 18px; line-height: 1.7;">
+              <li>IPK Kumulatif: <strong>3.57 / 4.00</strong> (IPK Semester 4: <strong>3.80 / 4.00</strong>)</li>
+              <li>Peran Kampus: <strong>Asisten Pengelola Kelas</strong> (Manajemen Data Presensi &amp; Akademik)</li>
+              <li>Fokus Studi: Data Mining, Database Design, Enterprise Architecture, Business Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 02 / 10 — About &amp; Academic Background</span>
+        <span>STMIK Tazkia — Information Systems</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 03: SKILLS & COMPETENCY -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">02 / KEAHLIAN TEKNIS</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title" data-i18n="skills.title">Keahlian Analisis Data &amp; Pengembangan Sistem</h2>
+      <div class="slide-content-body">
+        <div class="slide-three-cards">
+          <div class="slide-card-box">
+            <h3 class="slide-card-title"><i class="fas fa-database" style="color: #60a5fa; margin-right: 6px;"></i> Data Analytics &amp; SQL</h3>
+            <ul style="font-size: 9.5pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.8;">
+              <li>SQL (Querying, Joins, Aggregation)</li>
+              <li>Data Cleaning &amp; Preprocessing</li>
+              <li>Python for Data Analysis (Pandas)</li>
+              <li>Spreadsheet &amp; Microsoft Excel</li>
+              <li>Basic Machine Learning Concepts</li>
+            </ul>
+          </div>
+          <div class="slide-card-box">
+            <h3 class="slide-card-title"><i class="fas fa-code" style="color: #60a5fa; margin-right: 6px;"></i> Web &amp; System Dev</h3>
+            <ul style="font-size: 9.5pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.8;">
+              <li>HTML5 &amp; Vanilla CSS3</li>
+              <li>JavaScript ES6+ (DOM &amp; Logic)</li>
+              <li>Responsive Web Architecture</li>
+              <li>Git &amp; GitHub Version Control</li>
+              <li>REST API &amp; LocalStorage Integration</li>
+            </ul>
+          </div>
+          <div class="slide-card-box">
+            <h3 class="slide-card-title"><i class="fas fa-briefcase" style="color: #60a5fa; margin-right: 6px;"></i> Business Analytics</h3>
+            <ul style="font-size: 9.5pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.8;">
+              <li>Business Process Mapping</li>
+              <li>Requirements Gathering &amp; Analysis</li>
+              <li>Project Leadership &amp; Management</li>
+              <li>Public Relations &amp; Communication</li>
+              <li>Problem Solving &amp; Critical Thinking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 03 / 10 — Technical Skills &amp; Stack</span>
+        <span>Data &amp; Systems Expertise</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 04: PROJECT 01 - SAHABAT QURAN -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">03 / PROYEK 01</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title">Sahabat Quran — Sistem Absensi &amp; Tabungan Santri</h2>
+      <div class="slide-content-body">
+        <div class="slide-case-study">
+          <div class="slide-card-box">
+            <p class="slide-card-desc" data-i18n="p1.desc">
+              Sistem manajemen berbasis web yang dirancang khusus untuk memodernisasi administrasi lembaga pendidikan Quran.
+            </p>
+            <div style="margin: 14px 0; font-size: 9.5pt; line-height: 1.7; color: #cbd5e1;">
+              <div><strong>Peran:</strong> Project Manager &amp; Lead Full-Stack Developer</div>
+              <div><strong>Teknologi:</strong> HTML5, Vanilla CSS3, JavaScript ES6+, LocalStorage API</div>
+              <div><strong>Status:</strong> Live Production / Deployed</div>
+            </div>
+            <h4 style="font-size: 10.5pt; color: #60a5fa; margin: 10px 0 4px 0;">Fitur Utama:</h4>
+            <ul style="font-size: 9pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.6;">
+              <li>Pencatatan presensi santri dan rekap mutabaah harian</li>
+              <li>Pencatatan tabungan dan saldo keuangan santri transparan</li>
+              <li>Export laporan berkala dalam format PDF/Excel</li>
+            </ul>
+          </div>
+          <div class="case-img-box">
+            <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP" alt="Sahabat Quran Dashboard Preview">
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 04 / 10 — Project 01: Sahabat Quran</span>
+        <span>System Architecture &amp; Live UI</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 05: PROJECT 02 - TAKKA STEEL -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">04 / PROYEK 02</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title">Takka Steel — Website Company Profile &amp; Katalog Material</h2>
+      <div class="slide-content-body">
+        <div class="slide-case-study">
+          <div class="slide-card-box">
+            <p class="slide-card-desc" data-i18n="p2.desc">
+              Website profil perusahaan profesional untuk manufaktur dan distributor material baja konstruksi.
+            </p>
+            <div style="margin: 14px 0; font-size: 9.5pt; line-height: 1.7; color: #cbd5e1;">
+              <div><strong>Peran:</strong> Web Designer &amp; Developer</div>
+              <div><strong>Teknologi:</strong> Responsive HTML5, Modern CSS Animations, SEO Optimization</div>
+              <div><strong>Status:</strong> Client Deployed / Production</div>
+            </div>
+            <h4 style="font-size: 10.5pt; color: #60a5fa; margin: 10px 0 4px 0;">Keunggulan Sistem:</h4>
+            <ul style="font-size: 9pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.6;">
+              <li>Katalog produk baja interaktif dengan spesifikasi teknis lengkap</li>
+              <li>Desain visual industrial modern dengan performa akses tinggi</li>
+              <li>Integrasi saluran komunikasi langsung ke WhatsApp sales</li>
+            </ul>
+          </div>
+          <div class="case-img-box">
+            <img src="assets/projects/takka-steel/Cuplikan layar 2026-08-11 130742.WebP" alt="Takka Steel Preview">
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 05 / 10 — Project 02: Takka Steel</span>
+        <span>Company Profile &amp; Catalog</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 06: PROJECT 03 - SERTIFIKAT KILAT -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">05 / PROYEK 03</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title">Sertifikat Kilat — Generator Sertifikat &amp; Verifikasi QR</h2>
+      <div class="slide-content-body">
+        <div class="slide-case-study">
+          <div class="slide-card-box">
+            <p class="slide-card-desc" data-i18n="p3.desc">
+              Sistem generator sertifikat otomatis berbasis web untuk mempercepat penerbitan dokumen legalitas acara.
+            </p>
+            <div style="margin: 14px 0; font-size: 9.5pt; line-height: 1.7; color: #cbd5e1;">
+              <div><strong>Peran:</strong> Systems Analyst &amp; Front-End Engineer</div>
+              <div><strong>Teknologi:</strong> JavaScript Batch Processing, Canvas PDF Rendering, QR Verification</div>
+              <div><strong>Status:</strong> Functional Web App</div>
+            </div>
+            <h4 style="font-size: 10.5pt; color: #60a5fa; margin: 10px 0 4px 0;">Inovasi Teknis:</h4>
+            <ul style="font-size: 9pt; color: #cbd5e1; margin: 0; padding-left: 16px; line-height: 1.6;">
+              <li>Generasi ratusan sertifikat PDF secara otomatis dari data spreadsheet</li>
+              <li>Matriks QR Code unik untuk validasi keaslian dokumen secara publik</li>
+              <li>Workflow pengiriman email sertifikat otomatis ke peserta</li>
+            </ul>
+          </div>
+          <div class="case-img-box">
+            <img src="assets/projects/sertifikat-kilat/Cuplikan layar 2026-08-11 132211.WebP" alt="Sertifikat Kilat Generator Engine">
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 06 / 10 — Project 03: Sertifikat Kilat</span>
+        <span>Automation Engine &amp; QR Verification</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 07: EXPERIENCE -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">06 / PENGALAMAN ORGANISASI</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title" data-i18n="exp.title">Pengalaman Organisasi &amp; Kepemimpinan Kampus</h2>
+      <div class="slide-content-body">
+        <div class="slide-three-cards">
+          <div class="slide-card-box">
+            <div style="font-size: 8.5pt; color: #60a5fa; font-weight: 700;" data-i18n="exp.role1_date">2024 – SEKARANG</div>
+            <h3 class="slide-card-title" style="margin-top: 4px;" data-i18n="exp.role1_title">Asisten Pengelola Kelas</h3>
+            <div style="font-size: 9pt; color: #94a3b8; margin-bottom: 8px;" data-i18n="exp.role1_company">STMIK Tazkia</div>
+            <p class="slide-card-desc" data-i18n="exp.role1_desc">Mengelola administrasi akademik, rekapitulasi data presensi mahasiswa, serta membantu kelancaran operasional perkuliahan harian.</p>
+          </div>
+          <div class="slide-card-box">
+            <div style="font-size: 8.5pt; color: #60a5fa; font-weight: 700;" data-i18n="exp.role2_date">2024</div>
+            <h3 class="slide-card-title" style="margin-top: 4px;" data-i18n="exp.role2_title">Panitia Portal &amp; Event Kampus</h3>
+            <div style="font-size: 9pt; color: #94a3b8; margin-bottom: 8px;" data-i18n="exp.role2_company">Angkatan 3 STMIK Tazkia</div>
+            <p class="slide-card-desc" data-i18n="exp.role2_desc">Bertanggung jawab atas koordinasi publikasi, pengelolaan registrasi peserta, dan kelancaran alur acara kepanitiaan angkatan.</p>
+          </div>
+          <div class="slide-card-box">
+            <div style="font-size: 8.5pt; color: #60a5fa; font-weight: 700;" data-i18n="exp.role3_date">2024</div>
+            <h3 class="slide-card-title" style="margin-top: 4px;" data-i18n="exp.role3_title">Relawan Aksi Kemanusiaan</h3>
+            <div style="font-size: 9pt; color: #94a3b8; margin-bottom: 8px;" data-i18n="exp.role3_company">Tazkia Baitulmal ('Pray for Sumatra')</div>
+            <p class="slide-card-desc" data-i18n="exp.role3_desc">Mengkoordinasikan pengumpulan donasi, alokasi logistik, dan penyaluran bantuan untuk bencana alam Sumatra.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 07 / 10 — Experience &amp; Leadership</span>
+        <span>STMIK Tazkia</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 08: CERTIFICATIONS 3x2 GRID -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">07 / SERTIFIKASI KOMPETENSI</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title">Sertifikasi Data Analytics, Programming &amp; Soft Skills</h2>
+      <div class="slide-content-body">
+        <div class="slide-cert-grid-3x2">
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/ml.Webp" alt="Dicoding Machine Learning">
+            </div>
+            <h4 data-i18n="cert1.title">Belajar Machine Learning</h4>
+            <p>Dicoding Indonesia &bull; 2024</p>
+          </div>
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/revou.WebP" alt="RevoU Academy">
+            </div>
+            <h4 data-i18n="cert5.title">Data Analytics Course</h4>
+            <p>RevoU Academy &bull; 2024</p>
+          </div>
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/dbs.WebP" alt="DBS Foundation">
+            </div>
+            <h4 data-i18n="cert6.title">Financial Literacy</h4>
+            <p>DBS Foundation &bull; 2024</p>
+          </div>
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/sql.WebP" alt="Dicoding SQL">
+            </div>
+            <h4 data-i18n="cert4.title">Belajar Dasar SQL</h4>
+            <p>Dicoding Indonesia &bull; 2024</p>
+          </div>
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/pyton.WebP" alt="Dicoding Python">
+            </div>
+            <h4 data-i18n="cert3.title">Memulai Python</h4>
+            <p>Dicoding Indonesia &bull; 2024</p>
+          </div>
+          <div class="slide-cert-card-sm">
+            <div class="cert-img-container">
+              <img src="assets/certificates/pengembang.WebP" alt="Dicoding Soft Skills">
+            </div>
+            <h4 data-i18n="cert2.title">Pengembangan Diri</h4>
+            <p>Dicoding Indonesia &bull; 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 08 / 10 — Certifications (3&times;2 Grid)</span>
+        <span>Verified Credentials</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 09: DOCUMENTATION 4x2 GRID -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">08 / DOKUMENTASI KEGIATAN</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <h2 class="slide-title" data-i18n="gallery.title">Dokumentasi &amp; Bukti Kegiatan Lapangan</h2>
+      <div class="slide-content-body">
+        <div class="slide-doc-grid-4x2">
+          <div class="slide-doc-card">
+            <img src="assets/documentation/organization/bem-1.WebP" alt="BEM Sharing Session">
+            <div class="slide-doc-card-title">BEM — Sharing Session</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/documentation/organization/bem-2.WebP" alt="BEM Internal Discussion">
+            <div class="slide-doc-card-title">BEM — Diskusi Internal</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/documentation/teamwork/panitia-portal.WebP" alt="Panitia Portal Angkatan 3">
+            <div class="slide-doc-card-title">Angkatan 3 — Panitia Portal</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/documentation/teamwork/sds/holakoh.WebP" alt="SDS Outdoor Leadership">
+            <div class="slide-doc-card-title">SDS — Leadership Outdoor</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/documentation/teamwork/sds/holakoh2.WebP" alt="Halaqah Student Sharing">
+            <div class="slide-doc-card-title">Halaqah — Student Sharing</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/documentation/activities/sumatra.WebP" alt="Pray for Sumatra Relawan">
+            <div class="slide-doc-card-title">Pray for Sumatra — Relawan</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/projects/sahabat-quran/WhatsApp Image 2026-08-11 at 13.10.09.WebP" alt="Tim Proyek Sahabat Quran">
+            <div class="slide-doc-card-title">Tim Proyek — Sahabat Quran</div>
+          </div>
+          <div class="slide-doc-card">
+            <img src="assets/projects/takka-steel/WhatsApp Image 2026-08-11 at 13.10.11.WebP" alt="Tim Proyek Takka Steel Visit">
+            <div class="slide-doc-card-title">Tim Proyek — Takka Steel Visit</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 09 / 10 — Activity Documentation (4&times;2 Grid)</span>
+        <span>STMIK Tazkia Field Evidence</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: DEDICATED CONTACT SLIDE -->
+    <section class="pdf-slide theme-index-pdf">
+      <div class="slide-header-bar">
+        <span class="slide-tag">09 / MARI TERHUBUNG</span>
+        <span class="slide-author-badge">RAHMA FITRIA TUNNISA</span>
+      </div>
+      <div class="slide-content-body cover-slide-content">
+        <div class="cover-eyebrow" data-i18n="contact.tag">08 / KONTAK &amp; KOLABORASI</div>
+        <h2 class="cover-main-name" style="font-size: 32pt;" data-i18n="contact.title">Mari Terhubung &amp; Berkolaborasi</h2>
+        <p style="font-size: 11pt; color: #cbd5e1; max-width: 700px; margin-bottom: 24px;" data-i18n="contact.subtitle">
+          Tertarik berdiskusi mengenai proyek analisis data, pengembangan sistem informasi, atau peluang magang? Jangan ragu untuk menghubungi saya.
+        </p>
+        <div class="slide-card-box" style="padding: 20px; max-width: 780px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 10.5pt; color: #f8fafc;">
+            <div><strong>Nama Lengkap:</strong> Rahma Fitria Tunnisa</div>
+            <div><strong>Lokasi:</strong> Bogor, Jawa Barat, Indonesia</div>
+            <div><strong>Telepon / WhatsApp:</strong> 0888-1415-900</div>
+            <div><strong>Email:</strong> rahmafitriatunnisa@gmail.com</div>
+            <div><strong>LinkedIn:</strong> linkedin.com/in/rahma-fitria-tunnisa-91470b333</div>
+            <div><strong>GitHub:</strong> github.com/nisa262006</div>
+            <div style="grid-column: span 2;"><strong>Website Portofolio:</strong> nisa262006.github.io/rahma-fitria-tunnisa/</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer-bar">
+        <span>Slide 10 / 10 — Contact &amp; Collaboration</span>
+        <span>Thank You</span>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
