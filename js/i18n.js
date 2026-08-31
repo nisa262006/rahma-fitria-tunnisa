@@ -250,6 +250,20 @@ const translations = {
     "cert12.issuer": "BOGOR TECHNOPRENEUR COMMUNITY (B-TECH)",
     "cert12.date": "JUNI 2025",
 
+    "cert13.title": "Capstone Project — YOU RISE x RevoU in Collaboration with Volksgraph",
+    "cert13.issuer": "YOU RISE x REVOU & VOLKSGRAPH",
+    "cert13.date": "APRIL – MEI 2026 · SKOR 95/100 (GRADE A)",
+
+    "cert14.title": "Graphic Design Training — YOU RISE",
+    "cert14.issuer": "DBS FOUNDATION & PLAN INDONESIA",
+    "cert14.date": "AGUSTUS 2026 · 28 JAM",
+
+    "exp.capstone_title": "Capstone Project — YOU RISE x RevoU (Volksgraph)",
+    "exp.capstone_org": "YOU RISE x RevoU in Collaboration with Volksgraph",
+    "exp.capstone_date": "APRIL – MEI 2026",
+    "exp.capstone_tag": "Pelatihan & Capstone Project",
+    "exp.capstone_desc": "Menyelesaikan proyek capstone kolaboratif yang mencakup analisis dan audit, strategi media sosial dan konten, komunikasi visual, presentasi, serta kolaborasi tim. Pencapaian: Skor Keseluruhan 95/100 (Grade A).",
+
     // Gallery Section
     "gallery.tag": "07 / DOKUMENTASI KEGIATAN",
     "gallery.title": "Dokumentasi & Bukti Kegiatan",
@@ -535,6 +549,20 @@ const translations = {
     "cert12.title": "Webinar: Large Language Model Artificial Intelligence",
     "cert12.issuer": "BOGOR TECHNOPRENEUR COMMUNITY (B-TECH)",
     "cert12.date": "JUNE 2025",
+
+    "cert13.title": "Capstone Project — YOU RISE x RevoU in Collaboration with Volksgraph",
+    "cert13.issuer": "YOU RISE x REVOU & VOLKSGRAPH",
+    "cert13.date": "APRIL – MAY 2026 · SCORE 95/100 (GRADE A)",
+
+    "cert14.title": "Graphic Design Training — YOU RISE",
+    "cert14.issuer": "DBS FOUNDATION & PLAN INDONESIA",
+    "cert14.date": "AUGUST 2026 · 28 HOURS",
+
+    "exp.capstone_title": "Capstone Project — YOU RISE x RevoU (Volksgraph)",
+    "exp.capstone_org": "YOU RISE x RevoU in Collaboration with Volksgraph",
+    "exp.capstone_date": "APRIL – MAY 2026",
+    "exp.capstone_tag": "Training & Capstone Project",
+    "exp.capstone_desc": "Completed a collaborative capstone project involving analysis and auditing, social media and content strategy, visual communication, presentation, and team collaboration. Achievement: Overall Score 95/100 (Grade A).",
 
     // Gallery Section
     "gallery.tag": "07 / EVIDENCE ARCHIVE",
