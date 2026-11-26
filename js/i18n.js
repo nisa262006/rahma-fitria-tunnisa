@@ -258,6 +258,10 @@ const translations = {
     "cert14.issuer": "DBS FOUNDATION & PLAN INDONESIA",
     "cert14.date": "AGUSTUS 2026 · 28 JAM",
 
+    "cert15.title": "Belajar Membuat Website Projek",
+    "cert15.issuer": "B-TECH & STMIK TAZKIA",
+    "cert15.date": "OKTOBER 2026",
+
     "exp.capstone_title": "Capstone Project — YOU RISE x RevoU (Volksgraph)",
     "exp.capstone_org": "YOU RISE x RevoU in Collaboration with Volksgraph",
     "exp.capstone_date": "APRIL – MEI 2026",
@@ -274,6 +278,7 @@ const translations = {
     "contact.title": "Mari Terhubung & Berkolaborasi",
     "contact.subtitle": "Tertarik berdiskusi mengenai proyek sistem informasi, web development, proses bisnis, atau peluang magang? Jangan ragu untuk menghubungi saya.",
     "contact.badge": "Terbuka untuk Kesempatan Magang IT & Sistem Informasi",
+    "contact.btn_email": "Kirim Email",
     "contact.btn_whatsapp": "WhatsApp",
     "contact.btn_linkedin": "LinkedIn",
     "contact.btn_github": "GitHub",
@@ -558,6 +563,10 @@ const translations = {
     "cert14.issuer": "DBS FOUNDATION & PLAN INDONESIA",
     "cert14.date": "AUGUST 2026 · 28 HOURS",
 
+    "cert15.title": "Learning to Build a Website Project",
+    "cert15.issuer": "B-TECH & STMIK TAZKIA",
+    "cert15.date": "OCTOBER 2026",
+
     "exp.capstone_title": "Capstone Project — YOU RISE x RevoU (Volksgraph)",
     "exp.capstone_org": "YOU RISE x RevoU in Collaboration with Volksgraph",
     "exp.capstone_date": "APRIL – MAY 2026",
@@ -574,6 +583,7 @@ const translations = {
     "contact.title": "Let's Connect & Collaborate",
     "contact.subtitle": "Interested in discussing information systems projects, web development, business processes, or internship opportunities? Feel free to reach out.",
     "contact.badge": "Open for IT & Information Systems Internship Opportunities",
+    "contact.btn_email": "Send Email",
     "contact.btn_whatsapp": "WhatsApp",
     "contact.btn_linkedin": "LinkedIn",
     "contact.btn_github": "GitHub",
